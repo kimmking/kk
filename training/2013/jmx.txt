@@ -1,0 +1,133 @@
+﻿by 董碧莹-快乐 892966225
+JMX(Java Management Extensions)
+一、简介
+	JMX(Java Management Extensions)是一个为应用程序植入管理功能的框架。
+	JMX是一套标准的代理和服务，实际上，用户可以在任何Java应用程序中使用这些代理和服务实现管理。 
+	JMX的前身是JMAPI。 
+	JMX致力于解决分布式系统管理的问题，因此，能够适合于各种不同的环境是非常重要的。
+	为了能够利用功能强大的Java计算环境解决这一的问题，Sun公司扩充了Java基础类库，开发了专用的管理类库。 
+	JMX是一种应用编程接口，可扩充对象和方法的集合体，
+	可以用于跨越一系列不同的异构操作系统平台、系统体系结构和网络传输协议，
+	灵活的开发无缝集成的系统、网络和服务管理应用 它提供了用户界面指导、
+	Java类和开发集成系统、网络及网络管理应用的规范。 
+	管理对象是JMX应用程序的核心。
+	JMX结构包括：支持Java的Web浏览器用户接口，管理运行模块ARM(Admin Runtime Module)和应用。
+	这三个部件之间通过RMI（Remote Method Invocation）进行通信。
+	这里需要说明的是，RMI是使得一个Java虚拟机（JVM）上运行的程序可以调用远程服务器上另一个JVM总的对象。 
+	用户接口用来发布管理操作，这些操作可以间接的通过浏览器或通过单独的应用程序来激发。
+	管理运行模块用来给应用提供实例化的管理对象。
+	它包括Agent对象接口，通知接口和被管数据接口。
+	应用指的是那些被管设备单元。 
+	JMX是一个完整的网络管理应用程序开发环境，
+	它同时提供了：厂商需要收集的完整的特性清单，可生成资源清单表格，
+	图形化的用户接口；访问SNMP的网络API；
+	主机间远程过程调用；数据库访问方法。 
+	JMX这一轻型的管理基础结构，价值在于对被管理资源的服务实现了抽象，
+	提供了低层的基本类集合，
+	开发人员在保证大多数的公共管理类的完整性和一致性的前提下，进行扩展以满足特定网络管理应用的需要。 
+	JMX注重于构造管理工具的软件框架，并尽量采用已成熟的技术。 
+二：何时适合使用 JMX？
+	对于使用大量资源的任意关键 J2EE 应用程序。
+	例如：数据库或JMS连接或缓存，
+		MBean 来监视各个应用程序会话何时获取和释放连接。
+		还可以包括能够终止似已阻塞的会话的管理操作。
+		如果应用程序创建并维护自己的缓存，
+		或向超出应用程序容器控制的数据仓库中写入数据，
+		可以考虑创建 MBean 来监视缓存大小或向仓库中写入的数据量。	
+三、需要监控的和管理的需求
+	1、监控平台运行状况：网络硬件、web服务器、数据库、
+	2、在应用级别配置资源：连接池中活动的连接数
+	3、收集应用统计数据：各种重要的事务统计数据、查询数据
+	4、调试选项：
+	5、监视服务器性能：运行状况和负载状况
+四、好处
+	JMX可以使应用具有可配置性
+	1、使用简单(相对于snmp),可以非常容易的使应用程序具有被管理的功能.
+	2、兼容即存技术：
+		与其他协议（snmp、http等）通讯的能力，
+		和其他任何的transport(如java rmi)互连。
+	3、组件化：允许以组件的形式构建管理系统。
+	4、警告、事件和统计：
+		从web服务器或数据库等资源收集信息。
+		提供了一个通知(notification)机制：提供了充分能力像分发
+		基本数据那样分发java对象。管理系统可以发送一个既包含数据
+		又包含操作的通知。
+		可以发布数据（警告和系统事件），也可以对感兴趣的数据发送一种机制。
+	5、快速监控方案：
+五、JMX架构的三层组件
+1、分布层：包含使管理系统和JMX代理通信的组件
+	最外一层，负责使JMX代理对外部世界可用。
+	两种分布式交互：适配器、连接器
+	包含了可使客户端通过浏览器、Java RMI或SNMP连接到代理的组件。
+2、代理层：包含代理和MBean服务器
+	主要组件是MBean服务器，MBean服务器供MBean注册使用，它是JMX代理的核心。
+	四种管理MBean的代理服务：时间服务、监视服务、动态MBean装载服务和关系服务。
+	它只提供一个服务，用来处理MBean ，
+	以及通过连接器或适配器暴露的一系列的协议来操纵MBean 。
+3、指令层：包括代表可管理资源的MBean
+	最接近管理资源的一层，它由代理中注册的MBean 构成。
+	每一个MBean暴露底层管理资源的一部分配置或是一个功能,
+	以java对象的方式提供了对资源的管理。
+	资源本身不是使用java的，MBean就扮演了从代理到资源之间的一个转换器。
+六： MBean 四种类型
+	标准管理构件（Standard MBean）:
+		这种类型的MBean最简单，
+		它能管理的资源（包括属性，方法，时间）必须定义在接口中，
+		然后MBean必须实现这个接口。
+		它的命名也必须遵循一定的规范，
+		例如我们的MBean为Hello，则接口必须为HelloMBean。
+	动态管理构件（Dynamic MBean）:
+		必须实现javax.management.DynamicMBean接口，
+		所有的属性，方法都在运行时定义
+	开放管理构件(Open Mbean):
+		Open MBeans必须实现DynamicMBean接口，以对管理程序提供自我描述。
+		与DynamicMBean的不同，就是Open MBean提供了更复杂的metadata数据，
+		和在接口中，只使用了几种预定义的数据类型。
+		判断一个MBean是不是open的，可以根据它返回的MBeanInfo对象来判断。
+		Open MBean返回的是OpenMBeanInfo对象，这个类是MBeanInfo的子类。
+	模型管理构件(Model MBean):
+		与标准和动态MBean相比，你可以不用写MBean类，只需使用javax.management.modelmbean.RequiredModelMBean即可。
+		RequiredModelMBean实现了ModelMBean接口，而ModelMBean扩展了DynamicMBean接口
+		，因此与DynamicMBean相似，Model MBean的管理资源也是在运行时定义的。
+		与DynamicMBean不同的是，DynamicMBean管理的资源一般定义在DynamicMBean中（运行时才决定管理那些资源），
+		而model MBean管理的资源并不在MBean中，
+		而是在外部（通常是一个类），只有在运行时，
+		才通过set方法将其加入到model MBean中。
+七、jmx基本术语
+1、可管理资源：是一个通过JMX MBean管理的实体。
+2、MBean（管理构建）：
+	java类，继承一些标准的JMX指令。
+	MBean实例就是Java对象，为可管理资源暴露管理和侵入接口。
+	MBean的管理接口由MBean暴露给管理系统的属性和操作组成。
+	三种类型的MBean：标准MBean（Standard MBean）,
+		动态MBean(Dynamic MBean),模型MBean(Model MBean).
+	MBean驻留在另一个JMX组件－－MBean Server中。
+3、MBean Server:
+	java类，管理一组MBean。
+	MBean server是JMX管理环境的中枢，在查询MBean中扮演注册表的角色。
+		会暴露所有在它上注册的MBean接口,不对暴露MBean对象的应用。
+	提供查询MBean的方法和注册通知事件的方法。
+4、JMX代理(JMX agent):
+	java进程，提供一组用于管理MBean的服务，它是MBean server容器。
+	JMX提供的服务：创建MBean关系服务、动态加载类服务、
+		简单监控服务、时间服务。
+	JMX代理拥有一组协议适配器和连接器，
+	通过它们，远端的不同的客户端就可以使用JMX代理。
+	适配器和连接器是java类，通常是MBean，
+	可以在内部映射一个外部协议（如HTTP或者SNMP），
+	或者将代理暴露给远程的连接（RMI或JNDI）,
+5、适配器和连接器（Protocol adapters and connectors）
+	适配器和连接器驻留在JMX代理中，将代理暴露给管理应用和协议。
+	一个代理可以有任意数量的适配器和连接器。
+6、管理应用（management application）
+	管理应用是任何用于连接到JMX代理接口的用户程序。
+7、通知（Notification）
+	通知是Java对象，由MBean和MBeanServer发送，
+	包装了时间、通知和一般的信息。
+8、指令（Instumentation）
+	指令是通过MBean暴露的可管理资源的一个处理过程。
+八：应用
+	1、使用JMX监控应用程序内、外部的状况（WebLogic）http://docs.huihoo.com/java/jmx/weblogic_jmx.html。
+	2、使用jmx远程监控tomcat
+	3、施用JMX远程监控、管理JVM
+
