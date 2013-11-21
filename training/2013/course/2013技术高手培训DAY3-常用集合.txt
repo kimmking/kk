@@ -1,0 +1,159 @@
+技术高手培训DAY3
+
+课程主题：常用的数据结构
+
+主讲：秦金卫(kimmking)
+
+本次整理：董碧莹(快乐)
+
+时间：2013-11-7 20:00:00 - 2013-11-7 21:29:00
+
+一、上次作业回顾：
+1、float的问题:
+	简单的说就是 用了二进制的科学计数法，一个复杂点的小数，用二进制表示会非常的长，超出了float能表示的有效范围。所以无法精确表示。
+2、改进计划：希望尽快完成作业。
+
+二、上节课程回顾：
+	所有的复杂数据结构的基础：由基本的数据类型再加上数组，以用struct构成。
+	struct:
+		就是一个可以包含 其他类型的复合体。在java里就是class。
+		在c#里，有struct和class两个不同类型,都可以用来组合不同的数据类型。
+		
+三、复杂数据结构：
+	通过基本类型、数组+组合操作，我们就可以衍生出来各种不同的复杂数据结构。
+	如：List Stack Queue Set Map 等等。
+	其中最常用的应该就是List和Map，比如ArrayList和HashMap。
+	
+四、List：
+	恰如其名，就是一个列表。
+1、基本方法：
+	1)可以循环其中的所有item
+	2)可以拿到指定位置的item
+	3)可以修改或移除指定位置的item
+	3)可以拿到所有item的个数
+2、ArrayList 是如何实现的呢？
+	1)其实内部就是一个数组。然后有一个指针，指向现在用到的位置个数。
+		比如 初始化的时候，ArrayList list = new ArrayList();
+			默认分配了一个object[10]的数组
+	2)疑问：这里的指针：意味着一个int index 变量。index的值表示这个数组里使用的元素个数。
+		比如开始的时候，index=0，因为一个元素都没丢进去呢。
+		通过 list.add(1)，这时候 object[0]=Integer.valuaOf(1)，往数组的第一个位置放进去了这个要添加的 对象，同时，给index加上1
+		再list.add(2)，会给第二个位置放上2，同时index=2。
+	3)提问：object[0]=Integer.valuaOf(1):为什么前面写个Integer转换？
+	  小风：放的是对象，不是基础数据类型。
+	  小猫：List<E> 泛型么·？int是基础数据类型，不属于Object吧
+		KK：（int是基础数据类型，不属于Object）正解。box 装箱过程。实际上，编译期编译后的代码，就是这么干的。这里会有性能损耗。
+	4)达到10个的时候，数组不够了。满了，怎么办呢？扩容。
+	  按newCapacity = (oldCapacity * 3)/2 + 1此方式扩容。
+	5)因为是数组，所以get(index) set(index) add(Object) 都很简单。
+	  remove(index)稍微麻烦点，需要把后面的元素，都一个个的往前挪一位,
+	  string 其实跟List很像。String 内部是一个 char[]。
+	6)疑问：怎么是移位的算法。
+	  remove代码，集体移位：
+		public E remove(int index) {
+			RangeCheck(index);
+
+			modCount++;
+			E oldValue = (E) elementData[index];
+
+			int numMoved = size - index - 1;
+			if (numMoved > 0)
+				System.arraycopy(elementData, index+1, elementData, index,
+				 numMoved);
+			elementData[--size] = null; // Let gc do its work
+
+			return oldValue;
+		}
+	7)分析：elementData[--size] = null; // Let gc do its work
+	   A、jdk的代码很经典的，把多余的位置置null，使得GC可以回收没有引用的对象。
+	   B、一句代码做了两件事，除了==null，还把size减了1
+	   C、说明如果连续减去了多个元素，减到扩容前的容量的时候，数组也不会回收掉。
+		 比如现在20个位置，11个元素。减去10个元素，数组还是20.
+	   解释C点：就是remove元素，不会new出来新数组。不会修改数组的大小。remove只是减少了数组里的元素个数，不会修改数组的长度。
+			add的时候，会扩容；remove的时候，不会缩容。所以，如果现在长度是10000，有可能出现只有一个元素。
+3、常见的还有一个List实现：LinkedList
+	1)Node：一个基本的复合结构，一个Node节点就是一个数据+一个指针的组合体。
+		比如 Node{ Object value; Node next; }，next是个指针，指向下一个Node。
+	2)LinkedList:
+		当有两个以上的Node连起来的时候，就是一个LinkedList。
+		靠一个个的元素自己串起来的List,而不是像ArrayList那样用数组的位置表示的List。
+	3)单向链表:只能从头循环，一个个的指向后面一个元素.
+	  双向链表:同时有前后节点指针,可以从头循环，一个个的指向后面一个元素，也可以从尾循环到头。
+		如果一个链表从一个node走下去，最后又回来了，那么就是一个环。
+	4)LinkedList是单向，还是多向？
+		java里的LinkedList是双向链表。
+		java里的LinkedList，操作都被封装成List的操作。跟ArrayList的API一样。node里的指针，是看不到的。所以，行不成环。
+		只能像ArrayList一样，add get set remove。
+	5)基本操作：
+		A、add的时候，往链上加i一个node，调整指针。
+		B、LinkedList不需要扩容。插入元素，加一个node即可（就是代码里的entry）。
+		C、删除某个node的时候，直接让它的前后node相互指向即可。如： a -> b -> c  ：删除b => a -> c
+		D、add一个元素，要同事处理next和previous。
+	6)提问：缺点是什么？
+		屁冬：查找某个元素慢，遍历到不一定
+		小风：get(i)很慢
+		KK	：get i，，，链表没这个基本功能
+	7)适用于：
+		不需要 使用index的时候，大量的add和remove，容量剧烈变化的时候，只有循环的时候。
+		链表remove不需要移动数组，不会浪费空间。比数组有优势。
+		LinkedList可以很方便的用来实现Stack或Queue，因为从链表的结构来看，其非常方便的从头或尾来添加或删除元素。
+	8)问题：小风：那arrayList是双向链表么？ 还是压根就不算链表？只能算是一个集合？
+		屁冬：arrayList就是一个顺序表的实现而已，不算链表
+		kk  : ArrayList是一个数组表。
+	9)Stack和Queue：可以看做一个特殊的List
+		一个从尾add，从尾取数据。
+		一个从尾加，从头取数据。
+	10)补充：
+		A：实际上，LinkedList实现了 Deque接口，Deque接口继承了Queue接口。
+		B、List Queue Set Map 都是接口，有各种实现，前几种都是线性的表结构，
+		都可以用两种基本方式实现，Array和Linked这两个方法是同构的，
+		一个是用数组来表示表，一个是用节点链来表示表。
+		C、在java中Stack是类。
+		D、只要有需要缓冲的地方，到处是Queue。比如常用的 ArrayBlockingQueue。
+	11)Stack的应用场景：
+		A、设计到多线程的代码，经常会用到它。
+		B、常用于表达式求值
+		
+五、Set:
+	从Collection接口来的，比List还简单，少了 index的操作。
+	
+六、Map:
+	就是个 key => 映射(key=>value)
+1、基本方法：
+	1)可以put 一个key value，get一个key value。
+	2)可以remove一个k-v。
+	3)可以拿到所有的key集合和value集合。
+2、问题：keySet里面保存的是key=>指针的映射么？
+	keySet是个方法,返回的是 包括所有key的Set。
+	values也是方法，返回的是所有value的Collection。
+3、提问；谁知道 HashMap的key-value是怎么存的，怎么寻址的，怎么解决hash冲突的，HashMap怎么扩容的？
+	小风：当做签名，你知道签名是干嘛用的么，简单的说equal，第一步就是比较hashcode 。
+	  KK：hashcode,每个Object都有,每个对象都有 public int hashCode() ,
+		hashmap里面是一个entry[16]，也是一个数组，每个entry{object key；object value}，
+		里面是key和value或者 key-value的 List，new一个HashMap，默认就new出来一个entry[16]，
+		put 一个(key,value)，先拿到key的hashCode，取index = hashCode % 16,得到的数，
+		就是这个k-v在HashMap中entry数组里的位置。如果发现这里已经有了一个entry，
+		就作为链表的node，挂在后面，HashMap 就是这么一个结构。如果put进去的key的value都相同，
+		如果put进去的key的hashCode都相同，那么，都在一个位置上，全都串起来，成链表了。
+		获取key的集合或value的集合，就成了循环所有的entry，以及每个entry位置上的链表，
+		拿到所有的key和value，丢到集合返回。可以看到hashCode % 16的结果越分散，丢进去的k-v分的越开。
+		操作的时候，需要循环的次数越少。为了使得hash冲突尽量小，hashMap实现里引入了一个 容量因子 0.75，
+		当元素个数 达到 数组的 0.75时，扩容如下：
+			 if (size++ >= threshold)
+            resize(2 * table.length);
+		就是说当数组填充的大半满的时候，就容量*2，从而使得数组填充的小于40%，让数组的利用率既不是太低，又不是浪费的太多。
+
+七、下期预告
+	内容：
+		排序：
+			1、冒泡
+			2、快排
+			3、基数
+			4、归并
+			5、编码
+			
+八、提示：
+	1、计划没有细化清楚的同学，赶紧补上作业。
+	2、昨天作业没交的同学，也请补上。
+
+
