@@ -1,3 +1,5 @@
+# JSON最佳实践
+
 JSON是一种文本方式展示结构化数据的方式，从产生的时候开始就由于其简单好用、跨平台，特别适合HTTP下数据的传输（例如现在很流行的REST）而被广泛使用。
 
 ## 1、JSON是什么
@@ -437,6 +439,7 @@ public static class B {
 - 自定义序列化
 
 只需要2步：[参见此处](https://github.com/alibaba/fastjson/wiki/ObjectSerializer_cn)
+
 1)实现ObjectSerializer
 ```java
 public class CharacterSerializer implements ObjectSerializer {
