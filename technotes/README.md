@@ -1,21 +1,21 @@
-JSONÊÇÒ»ÖÖÎÄ±¾·½Ê½Õ¹Ê¾½á¹¹»¯Êı¾İµÄ·½Ê½£¬´Ó²úÉúµÄÊ±ºò¿ªÊ¼¾ÍÓÉÓÚÆä¼òµ¥ºÃÓÃ¡¢¿çÆ½Ì¨£¬ÌØ±ğÊÊºÏHTTPÏÂÊı¾İµÄ´«Êä£¨ÀıÈçÏÖÔÚºÜÁ÷ĞĞµÄREST£©¶ø±»¹ã·ºÊ¹ÓÃ¡£
+JSONæ˜¯ä¸€ç§æ–‡æœ¬æ–¹å¼å±•ç¤ºç»“æ„åŒ–æ•°æ®çš„æ–¹å¼ï¼Œä»äº§ç”Ÿçš„æ—¶å€™å¼€å§‹å°±ç”±äºå…¶ç®€å•å¥½ç”¨ã€è·¨å¹³å°ï¼Œç‰¹åˆ«é€‚åˆHTTPä¸‹æ•°æ®çš„ä¼ è¾“ï¼ˆä¾‹å¦‚ç°åœ¨å¾ˆæµè¡Œçš„RESTï¼‰è€Œè¢«å¹¿æ³›ä½¿ç”¨ã€‚
 
-## 1¡¢JSONÊÇÊ²Ã´
-JSONÆğÔ´ÓÚ1999ÄêµÄ[JSÓïÑÔ¹æ·¶ECMA262µÄÒ»¸ö×Ó¼¯](http://javascript.crockford.com/)£¨¼´15.12ÕÂ½ÚÃèÊöÁË¸ñÊ½Óë½âÎö£©£¬ºóÀ´2003Äê×÷ÎªÒ»¸öÊı¾İ¸ñÊ½[ECMA404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)£¨ºÜ‡åµÄĞòºÅÓĞ²»ÓĞ£¿£©·¢²¼¡£
-2006Äê£¬×÷Îª[rfc4627](http://www.ietf.org/rfc/rfc4627.txt)·¢²¼£¬ÕâÊ±¹æ·¶Ôö¼Óµ½18Ò³£¬È¥µôÃ»ÓÃµÄ²¿·Ö£¬Ê®Ò³²»µ½¡£
+## 1ã€JSONæ˜¯ä»€ä¹ˆ
+JSONèµ·æºäº1999å¹´çš„[JSè¯­è¨€è§„èŒƒECMA262çš„ä¸€ä¸ªå­é›†](http://javascript.crockford.com/)ï¼ˆå³15.12ç« èŠ‚æè¿°äº†æ ¼å¼ä¸è§£æï¼‰ï¼Œåæ¥2003å¹´ä½œä¸ºä¸€ä¸ªæ•°æ®æ ¼å¼[ECMA404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)ï¼ˆå¾ˆå›§çš„åºå·æœ‰ä¸æœ‰ï¼Ÿï¼‰å‘å¸ƒã€‚
+2006å¹´ï¼Œä½œä¸º[rfc4627](http://www.ietf.org/rfc/rfc4627.txt)å‘å¸ƒï¼Œè¿™æ—¶è§„èŒƒå¢åŠ åˆ°18é¡µï¼Œå»æ‰æ²¡ç”¨çš„éƒ¨åˆ†ï¼Œåé¡µä¸åˆ°ã€‚
 
-JSONµÄÓ¦ÓÃºÜ¹ã·º£¬ÕâÀïÓĞ³¬¹ı100ÖÖÓïÑÔÏÂµÄJSON¿â£º[json.org](http://www.json.org/)¡£
+JSONçš„åº”ç”¨å¾ˆå¹¿æ³›ï¼Œè¿™é‡Œæœ‰è¶…è¿‡100ç§è¯­è¨€ä¸‹çš„JSONåº“ï¼š[json.org](http://www.json.org/)ã€‚
 
-¸ü¶àµÄ¿ÉÒÔ²Î¿¼ÕâÀï£¬[¹ØÓÚjsonµÄÒ»ÇĞ](https://github.com/burningtree/awesome-json)¡£
+æ›´å¤šçš„å¯ä»¥å‚è€ƒè¿™é‡Œï¼Œ[å…³äºjsonçš„ä¸€åˆ‡](https://github.com/burningtree/awesome-json)ã€‚
 
 
-## 2¡¢ÓÅÈ±µã¡¢±ê×¼Óëschema
-### ½á¹¹ÓëÀàĞÍ
-Õâ¹À¼ÆÊÇ×î¼òµ¥±ê×¼¹æ·¶Ö®Ò»£º
-- Ö»ÓĞÁ½ÖÖ½á¹¹£º¶ÔÏóÄÚµÄ¼üÖµ¶Ô¼¯ºÏ½á¹¹ºÍÊı×é£¬¶ÔÏóÓÃ{}±íÊ¾¡¢ÄÚ²¿ÊÇ"key":"value"£¬Êı×éÓÃ[]±íÊ¾£¬²»Í¬ÖµÓÃ¶ººÅ·Ö¿ª
-- »ù±¾ÊıÖµÓĞ7¸ö£º false / null / true / object / array / number / string
-- ÔÙ¼ÓÉÏ½á¹¹¿ÉÒÔÇ¶Ì×£¬½ø¶ø¿ÉÒÔÓÃÀ´±í´ï¸´ÔÓµÄÊı¾İ
-- Ò»¸ö¼òµ¥ÊµÀı£º
+## 2ã€ä¼˜ç¼ºç‚¹ã€æ ‡å‡†ä¸schema
+### 2.1 ç»“æ„ä¸ç±»å‹
+è¿™ä¼°è®¡æ˜¯æœ€ç®€å•æ ‡å‡†è§„èŒƒä¹‹ä¸€ï¼š
+- åªæœ‰ä¸¤ç§ç»“æ„ï¼šå¯¹è±¡å†…çš„é”®å€¼å¯¹é›†åˆç»“æ„å’Œæ•°ç»„ï¼Œå¯¹è±¡ç”¨{}è¡¨ç¤ºã€å†…éƒ¨æ˜¯"key":"value"ï¼Œæ•°ç»„ç”¨[]è¡¨ç¤ºï¼Œä¸åŒå€¼ç”¨é€—å·åˆ†å¼€
+- åŸºæœ¬æ•°å€¼æœ‰7ä¸ªï¼š false / null / true / object / array / number / string
+- å†åŠ ä¸Šç»“æ„å¯ä»¥åµŒå¥—ï¼Œè¿›è€Œå¯ä»¥ç”¨æ¥è¡¨è¾¾å¤æ‚çš„æ•°æ®
+- ä¸€ä¸ªç®€å•å®ä¾‹ï¼š
 
 ```javascript
    {
@@ -33,74 +33,75 @@ JSONµÄÓ¦ÓÃºÜ¹ã·º£¬ÕâÀïÓĞ³¬¹ı100ÖÖÓïÑÔÏÂµÄJSON¿â£º[json.org](http://www.json.org/
    }
 ``` 
 
-### ÓÅµã
-- »ùÓÚ´¿ÎÄ±¾£¬ËùÒÔ¶ÔÓÚÈËÀàÔÄ¶ÁÊÇºÜÓÑºÃµÄ¡£
-- ¹æ·¶¼òµ¥£¬ËùÒÔÈİÒ×´¦Àí£¬¿ªÏä¼´ÓÃ£¬ÌØ±ğÊÇJSÀàµÄECMA½Å±¾ÀïÊÇÄÚ½¨Ö§³ÖµÄ£¬¿ÉÒÔÖ±½Ó×÷Îª¶ÔÏóÊ¹ÓÃ¡£
-- Æ½Ì¨ÎŞ¹ØĞÔ£¬ÒòÎªÀàĞÍºÍ½á¹¹¶¼ÊÇÆ½Ì¨ÎŞ¹ØµÄ£¬¶øÇÒºÃ´¦Àí£¬ÈİÒ×ÊµÏÖ²»Í¬ÓïÑÔµÄ´¦ÀíÀà¿â£¬¿ÉÒÔ×÷Îª¶à¸ö²»Í¬Òì¹¹ÏµÍ³Ö®¼äµÄÊı¾İ´«Êä¸ñÊ½Ğ­Òé£¬ÌØ±ğÊÇÔÚHTTP/RESTÏÂµÄÊı¾İ¸ñÊ½¡£
+### 2.2 ä¼˜ç‚¹
+- åŸºäºçº¯æ–‡æœ¬ï¼Œæ‰€ä»¥å¯¹äºäººç±»é˜…è¯»æ˜¯å¾ˆå‹å¥½çš„ã€‚
+- è§„èŒƒç®€å•ï¼Œæ‰€ä»¥å®¹æ˜“å¤„ç†ï¼Œå¼€ç®±å³ç”¨ï¼Œç‰¹åˆ«æ˜¯JSç±»çš„ECMAè„šæœ¬é‡Œæ˜¯å†…å»ºæ”¯æŒçš„ï¼Œå¯ä»¥ç›´æ¥ä½œä¸ºå¯¹è±¡ä½¿ç”¨ã€‚
+- å¹³å°æ— å…³æ€§ï¼Œå› ä¸ºç±»å‹å’Œç»“æ„éƒ½æ˜¯å¹³å°æ— å…³çš„ï¼Œè€Œä¸”å¥½å¤„ç†ï¼Œå®¹æ˜“å®ç°ä¸åŒè¯­è¨€çš„å¤„ç†ç±»åº“ï¼Œå¯ä»¥ä½œä¸ºå¤šä¸ªä¸åŒå¼‚æ„ç³»ç»Ÿä¹‹é—´çš„æ•°æ®ä¼ è¾“æ ¼å¼åè®®ï¼Œç‰¹åˆ«æ˜¯åœ¨HTTP/RESTä¸‹çš„æ•°æ®æ ¼å¼ã€‚
 
-### È±µã
-È±µãÒ²ºÜÃ÷ÏÔ£º
-- ĞÔÄÜÒ»°ã£¬ÎÄ±¾±íÊ¾µÄÊı¾İÒ»°ãÀ´Ëµ±È¶ş½øÖÆ´óµÃ¶à£¬ÔÚÊı¾İ´«ÊäÉÏºÍ½âÎö´¦ÀíÉÏ¶¼Òª¸üÓ°ÏìĞÔÄÜ¡£
-- È±·¦schema£¬¸úÍ¬ÊÇÎÄ±¾Êı¾İ¸ñÊ½µÄXML±È£¬ÔÚÀàĞÍµÄÑÏ¸ñĞÔºÍ·á¸»ĞÔÉÏÒª²îºÜ¶à¡£XML¿ÉÒÔ½èÓÉXSD»òDTDÀ´¶¨Òå¸´ÔÓµÄ¸ñÊ½£¬²¢ÓÉ´ËÀ´ÑéÖ¤XMLÎÄµµÊÇ·ñ·ûºÏ¸ñÊ½ÒªÇó£¬ÉõÖÁ½øÒ»²½µÄ£¬¿ÉÒÔ»ùÓÚXSDÀ´Éú³É¾ßÌåÓïÑÔµÄ²Ù×÷´úÂë£¬ÀıÈçapache xmlbeans¡£²¢ÇÒÕâĞ©¹¤¾ß×éºÏµ½Ò»Æğ£¬ĞÎ³ÉÒ»Ì×ÅÓ´óµÄÉúÌ¬£¬ÀıÈç»ùÓÚXML¿ÉÒÔÊµÏÖSOAPºÍWSDL£¬Ò»ÏµÁĞµÄws-*¹æ·¶¡£µ«ÊÇÎÒÃÇÒ²¿ÉÒÔ¿´µ½JSONÔÚÈ±·¦¹æ·¶µÄÇé¿öÏÂ£¬Êµ¼ÊÉÏÓĞ¸ü´óÒ»Ğ©µÄÁé»îĞÔ£¬ÌØ±ğÊÇ½üÄêÀ´RESTµÄ¿ìËÙ·¢Õ¹£¬ÒÑ¾­ÓĞÒ»Ğ©schemaÏà¹ØµÄ·¢Õ¹(ÀıÈç[Àí½âJSON Schema](https://spacetelescope.github.io/understanding-json-schema/index.html)£¬[Ê¹ÓÃJSON Schema](http://usingjsonschema.com/downloads/)£¬ [ÔÚÏßschema²âÊÔ](http://azimi.me/json-schema-view/demo/demo.html))£¬Ò²ÓĞÀàËÆÓÚWSDLµÄ[WADL](https://www.w3.org/Submission/wadl/)³öÏÖ¡£
+### 2.3 ç¼ºç‚¹
+ç¼ºç‚¹ä¹Ÿå¾ˆæ˜æ˜¾ï¼š
+- æ€§èƒ½ä¸€èˆ¬ï¼Œæ–‡æœ¬è¡¨ç¤ºçš„æ•°æ®ä¸€èˆ¬æ¥è¯´æ¯”äºŒè¿›åˆ¶å¤§å¾—å¤šï¼Œåœ¨æ•°æ®ä¼ è¾“ä¸Šå’Œè§£æå¤„ç†ä¸Šéƒ½è¦æ›´å½±å“æ€§èƒ½ã€‚
+- ç¼ºä¹schemaï¼Œè·ŸåŒæ˜¯æ–‡æœ¬æ•°æ®æ ¼å¼çš„XMLæ¯”ï¼Œåœ¨ç±»å‹çš„ä¸¥æ ¼æ€§å’Œä¸°å¯Œæ€§ä¸Šè¦å·®å¾ˆå¤šã€‚XMLå¯ä»¥å€Ÿç”±XSDæˆ–DTDæ¥å®šä¹‰å¤æ‚çš„æ ¼å¼ï¼Œå¹¶ç”±æ­¤æ¥éªŒè¯XMLæ–‡æ¡£æ˜¯å¦ç¬¦åˆæ ¼å¼è¦æ±‚ï¼Œç”šè‡³è¿›ä¸€æ­¥çš„ï¼Œå¯ä»¥åŸºäºXSDæ¥ç”Ÿæˆå…·ä½“è¯­è¨€çš„æ“ä½œä»£ç ï¼Œä¾‹å¦‚apache xmlbeansã€‚å¹¶ä¸”è¿™äº›å·¥å…·ç»„åˆåˆ°ä¸€èµ·ï¼Œå½¢æˆä¸€å¥—åºå¤§çš„ç”Ÿæ€ï¼Œä¾‹å¦‚åŸºäºXMLå¯ä»¥å®ç°SOAPå’ŒWSDLï¼Œä¸€ç³»åˆ—çš„ws-*è§„èŒƒã€‚ä½†æ˜¯æˆ‘ä»¬ä¹Ÿå¯ä»¥çœ‹åˆ°JSONåœ¨ç¼ºä¹è§„èŒƒçš„æƒ…å†µä¸‹ï¼Œå®é™…ä¸Šæœ‰æ›´å¤§ä¸€äº›çš„çµæ´»æ€§ï¼Œç‰¹åˆ«æ˜¯è¿‘å¹´æ¥RESTçš„å¿«é€Ÿå‘å±•ï¼Œå·²ç»æœ‰ä¸€äº›schemaç›¸å…³çš„å‘å±•(ä¾‹å¦‚[ç†è§£JSON Schema](https://spacetelescope.github.io/understanding-json-schema/index.html)ï¼Œ[ä½¿ç”¨JSON Schema](http://usingjsonschema.com/downloads/)ï¼Œ [åœ¨çº¿schemaæµ‹è¯•](http://azimi.me/json-schema-view/demo/demo.html))ï¼Œä¹Ÿæœ‰ç±»ä¼¼äºWSDLçš„[WADL](https://www.w3.org/Submission/wadl/)å‡ºç°ã€‚
 
-## ³£ÓÃ¼¼ÊõÓë¹¤¾ß
-### Ïà¹Ø¼¼ÊõÒÔ¼°ÓëXMLµÄ¹ØÏµ
-- Ê¹ÓÃJSONÊµÏÖRPC£¨ÀàËÆXML-RPC£©£º[JSON-RPC](http://www.jsonrpc.org/)
-- Ê¹ÓÃJSONÊµÏÖpath²éÑ¯²Ù×÷£¨ÀàËÆXML-PATH£©£º[JsonPATH](https://github.com/json-path/JsonPath)
-- ÔÚÏß²éÑ¯¹¤¾ß£º[JsonPATH](http://jsonpath.com/)
+## 3. å¸¸ç”¨æŠ€æœ¯ä¸å·¥å…·
+### 3.1 ç›¸å…³æŠ€æœ¯ä»¥åŠä¸XMLçš„å…³ç³»
+- ä½¿ç”¨JSONå®ç°RPCï¼ˆç±»ä¼¼XML-RPCï¼‰ï¼š[JSON-RPC](http://www.jsonrpc.org/)
+- ä½¿ç”¨JSONå®ç°pathæŸ¥è¯¢æ“ä½œï¼ˆç±»ä¼¼XML-PATHï¼‰ï¼š[JsonPATH](https://github.com/json-path/JsonPath)
+- åœ¨çº¿æŸ¥è¯¢å·¥å…·ï¼š[JsonPATH](http://jsonpath.com/)
  
-ÀıÈçÉÏÃæµÄÊ¾Àıjson£¬ÓÃ±í´ïÊ½$.Image.IDs[:1]²éÑ¯£¬µÃµ½116£º
+ä¾‹å¦‚ä¸Šé¢çš„ç¤ºä¾‹jsonï¼Œç”¨è¡¨è¾¾å¼$.Image.IDs[:1]æŸ¥è¯¢ï¼Œå¾—åˆ°116ï¼š
 ![image](https://raw.githubusercontent.com/kimmking/kk/master/images/json/jsonpath.png)
 
 
-ÎÒÃÇ¿´µ½JSONÓëXMLÊÇÈç´ËÖ®Ïñ£¬Êµ¼ÊÉÏÕâÁ½¸ö¸ñÊ½¿ÉÒÔ¿´×öÒ»¸öÊÇÑ§ÔºÅÅ£¬Ò»¸öÊÇÆ½ÃñÅÉ¡£Ò»¸ö¶ÔÏó´ÓPOJO×ª»»³ÉXMLÓëJSONµÄ¹ı³Ì£¬»ù±¾ÊÇÒ»ÖÂµÄ£¨¾ø´ó²¿·Ö¹¤×÷¿ÉÒÔ¸´ÓÃ£¬ÒÔºóÓĞ»ú»áÔÙÏêÏ¸ÁÄÕâ¸ö¹ı³Ì£©£¬10ÄêÇ°ÎÒ×Ô¼ºÒ²×ö¹ıÒ»¸ö»ùÓÚXMLµÄRPC£¨[http://code.google.com/p/rpcfx/](http://code.google.com/p/rpcfx/)£¬Ã²ËÆÒÑ¾­±»Ç½£©£¬ÀïÃæÊµÏÖÁËjavaºÍdotnet¡¢JSµÄXMLĞòÁĞ»¯Óë·´ĞòÁĞ»¯£¬Í¬Ê±×÷ÎªÒ»¸ö¸±²úÆ·£¬ÊµÏÖÁËJSONĞòÁĞ»¯¡£
+æˆ‘ä»¬çœ‹åˆ°JSONä¸XMLæ˜¯å¦‚æ­¤ä¹‹åƒï¼Œå®é™…ä¸Šè¿™ä¸¤ä¸ªæ ¼å¼å¯ä»¥çœ‹åšä¸€ä¸ªæ˜¯å­¦é™¢æ’ï¼Œä¸€ä¸ªæ˜¯å¹³æ°‘æ´¾ã€‚ä¸€ä¸ªå¯¹è±¡ä»POJOè½¬æ¢æˆXMLä¸JSONçš„è¿‡ç¨‹ï¼ŒåŸºæœ¬æ˜¯ä¸€è‡´çš„ï¼ˆç»å¤§éƒ¨åˆ†å·¥ä½œå¯ä»¥å¤ç”¨ï¼Œä»¥åæœ‰æœºä¼šå†è¯¦ç»†èŠè¿™ä¸ªè¿‡ç¨‹ï¼‰ï¼Œ10å¹´å‰æˆ‘è‡ªå·±ä¹Ÿåšè¿‡ä¸€ä¸ªåŸºäºXMLçš„RPCï¼ˆ[http://code.google.com/p/rpcfx/](http://code.google.com/p/rpcfx/)ï¼Œè²Œä¼¼å·²ç»è¢«å¢™ï¼‰ï¼Œé‡Œé¢å®ç°äº†javaå’Œdotnetã€JSçš„XMLåºåˆ—åŒ–ä¸ååºåˆ—åŒ–ï¼ŒåŒæ—¶ä½œä¸ºä¸€ä¸ªå‰¯äº§å“ï¼Œå®ç°äº†JSONåºåˆ—åŒ–ã€‚
 
-ºóÀ´thoughtsworks¹«Ë¾³öÆ·µÄXStream¾ÍÊÇÍ¬Ê±×öÁËXMLÓëJSONµÄĞòÁĞ»¯¡£¶ø´´½¨Jackson¿âµÄ×éÖ¯±¾À´½Ğfasterxml£¬¾ÍÊÇ´¦ÀíxmlµÄ¡£µ±È»´ÓÕâ¸ö½Ç¶ÈÀ´¿´£¬Fastjson¿â£¬ÉÔÎ¢¸Ä¸ÄÒ²ÊÇÒ»¸ö¸ßĞÔÄÜµÄXMLĞòÁĞ»¯¿â¡£
-Ö»ÊÇXMLÓĞ×Å¸üÑÏ¸ñµÄ½á¹¹£¬¸ü·á¸»µÄ¹¤¾ßÉúÌ¬£¬ÄÃ²éÑ¯Óë²Ù×÷À´Ëµ£¬XML»¹ÓĞXQuery¡¢XLSTµÈ¹¤¾ß¡£´¦Àí·½Ê½ÉÏÒ²ÓĞDOM·½Ê½ÓëSAXÁ÷Ä£Ê½£¬ÕâÁ½¸ö¾øÈ»²»Í¬µÄ¼¼Êõ¡£
+åæ¥thoughtsworkså…¬å¸å‡ºå“çš„XStreamå°±æ˜¯åŒæ—¶åšäº†XMLä¸JSONçš„åºåˆ—åŒ–ã€‚è€Œåˆ›å»ºJacksonåº“çš„ç»„ç»‡æœ¬æ¥å«fasterxmlï¼Œå°±æ˜¯å¤„ç†xmlçš„ã€‚å½“ç„¶ä»è¿™ä¸ªè§’åº¦æ¥çœ‹ï¼ŒFastjsonåº“ï¼Œç¨å¾®æ”¹æ”¹ä¹Ÿæ˜¯ä¸€ä¸ªé«˜æ€§èƒ½çš„XMLåºåˆ—åŒ–åº“ã€‚
+åªæ˜¯XMLæœ‰ç€æ›´ä¸¥æ ¼çš„ç»“æ„ï¼Œæ›´ä¸°å¯Œçš„å·¥å…·ç”Ÿæ€ï¼Œæ‹¿æŸ¥è¯¢ä¸æ“ä½œæ¥è¯´ï¼ŒXMLè¿˜æœ‰XQueryã€XLSTç­‰å·¥å…·ã€‚å¤„ç†æ–¹å¼ä¸Šä¹Ÿæœ‰DOMæ–¹å¼ä¸SAXæµæ¨¡å¼ï¼Œè¿™ä¸¤ä¸ªç»ç„¶ä¸åŒçš„æŠ€æœ¯ã€‚
 
-µ¥´ÓĞÔÄÜÀ´¿¼ÂÇ£¬XML¸üÊÇÓĞ[VTD-XML](http://vtd-xml.sourceforge.net/)ÕâÖÖ½â¾öÁËDOMÏûºÄÌ«´óÄÚ´æÓëSAXÖ»ÄÜµ¥ÏòÃ¿¸ö½Úµã¶ÁÒ»´Î²»ÄÜËæ»ú¶ÁµÄÈ±µãµÄ¸ßĞÔÄÜ´¦Àí·½Ê½¡£
+å•ä»æ€§èƒ½æ¥è€ƒè™‘ï¼ŒXMLæ›´æ˜¯æœ‰[VTD-XML](http://vtd-xml.sourceforge.net/)è¿™ç§è§£å†³äº†DOMæ¶ˆè€—å¤ªå¤§å†…å­˜ä¸SAXåªèƒ½å•å‘æ¯ä¸ªèŠ‚ç‚¹è¯»ä¸€æ¬¡ä¸èƒ½éšæœºè¯»çš„ç¼ºç‚¹çš„é«˜æ€§èƒ½å¤„ç†æ–¹å¼ã€‚
 
-### JavaÀà¿â
+### 3.2 Javaç±»åº“
 - [Fastjson](https://github.com/alibaba/fastjson)
 - [Jackson](http://wiki.fasterxml.com/JacksonHome)
 - [Gson](https://github.com/google/gson)
 - [Xstream](http://x-stream.github.io/)
 
-### ¹¤¾ß
-- ¸ñÊ½»¯¹¤¾ß£º[jsbeautifier](http://jsbeautifier.org/)
-- chrome²å¼ş£º[5¸öJson View²å¼ş](http://www.cnplugins.com/zhuanti/five-chrome-json-plugins.html)
-- ÔÚÏßMock: [ÔÚÏßmock](https://www.easy-mock.com/)
-- ÆäËûMock£º[SoapUI](https://www.soapui.org/rest-testing-mocking/rest-service-mocking.html)¿ÉÒÔÖ§³Ö£¬SwaggerUIÒ²¿ÉÒÔ£¬[RestMock](https://github.com/andrzejchm/RESTMock)Ò²¿ÉÒÔ¡£
+### 3.3 å·¥å…·
+- æ ¼å¼åŒ–å·¥å…·ï¼š[jsbeautifier](http://jsbeautifier.org/)
+- chromeæ’ä»¶ï¼š[5ä¸ªJson Viewæ’ä»¶](http://www.cnplugins.com/zhuanti/five-chrome-json-plugins.html)
+- åœ¨çº¿Mock: [åœ¨çº¿mock](https://www.easy-mock.com/)
+- å…¶ä»–Mockï¼š[SoapUI](https://www.soapui.org/rest-testing-mocking/rest-service-mocking.html)å¯ä»¥æ”¯æŒï¼ŒSwaggerUIä¹Ÿå¯ä»¥ï¼Œ[RestMock](https://github.com/andrzejchm/RESTMock)ä¹Ÿå¯ä»¥ã€‚
 
 ![image](https://github.com/kimmking/kk/blob/master/images/json/json01.png?raw=true)
 ![image](https://github.com/kimmking/kk/blob/master/images/json/json02.png?raw=true)
 
-## Google JSON·ç¸ñÖ¸ÄÏ
-×ñÑ­ºÃµÄÉè¼ÆÓë±àÂë·ç¸ñ£¬ÄÜÌáÇ°½â¾ö80%µÄÎÊÌâ:
-- Ó¢ÎÄ°æ[Google JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)£ºhttps://google.github.io/styleguide/jsoncstyleguide.xml
-- ÖĞÎÄ°æ[Google JSON·ç¸ñÖ¸ÄÏ](https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md)£ºhttps://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md
+## 4. JSONç¼–ç æŒ‡å—
+### 4.1 Google JSONé£æ ¼æŒ‡å—
+éµå¾ªå¥½çš„è®¾è®¡ä¸ç¼–ç é£æ ¼ï¼Œèƒ½æå‰è§£å†³80%çš„é—®é¢˜:
+- è‹±æ–‡ç‰ˆ[Google JSON Style Guide](https://google.github.io/styleguide/jsoncstyleguide.xml)ï¼šhttps://google.github.io/styleguide/jsoncstyleguide.xml
+- ä¸­æ–‡ç‰ˆ[Google JSONé£æ ¼æŒ‡å—](https://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md)ï¼šhttps://github.com/darcyliu/google-styleguide/blob/master/JSONStyleGuide.md
 
-¼òµ¥ÕªÂ¼ÈçÏÂ£º
-- ÊôĞÔÃûºÍÖµ¶¼ÊÇÓÃË«ÒıºÅ£¬²»Òª°Ñ×¢ÊÍĞ´µ½¶ÔÏóÀïÃæ£¬¶ÔÏóÊı¾İÒª¼ò½à
-- ²»ÒªËæÒâ½á¹¹»¯·Ö×é¶ÔÏó£¬ÍÆ¼öÊÇÓÃ±âÆ½»¯·½Ê½£¬²ã´Î²»ÒªÌ«¸´ÔÓ
-- ÃüÃû·½Ê½ÒªÓĞÒâÒå£¬±ÈÈçµ¥¸´Êı±íÊ¾
-- ÍÕ·åÊ½ÃüÃû£¬×ñÑ­Bean¹æ·¶
-- Ê¹ÓÃ°æ±¾À´¿ØÖÆ±ä¸ü³åÍ»
-- ¶ÔÓÚÒ»Ğ©¹Ø¼ü×Ö£¬²»ÒªÄÃÀ´×ökey
-- Èç¹ûÒ»¸öÊôĞÔÊÇ¿ÉÑ¡µÄ»òÕß°üº¬¿ÕÖµ»ònullÖµ£¬¿¼ÂÇ´ÓJSONÖĞÈ¥µô¸ÃÊôĞÔ£¬³ı·ÇËüµÄ´æÔÚÓĞºÜÇ¿µÄÓïÒåÔ­Òò
-- ĞòÁĞ»¯Ã¶¾ÙÀàĞÍÊ±£¬Ê¹ÓÃname¶ø²»ÊÇvalue
-- ÈÕÆÚÒªÓÃ±ê×¼¸ñÊ½´¦Àí
-- Éè¼ÆºÃÍ¨ÓÃµÄ·ÖÒ³²ÎÊı
-- Éè¼ÆºÃÒì³£´¦Àí
+ç®€å•æ‘˜å½•å¦‚ä¸‹ï¼š
+- å±æ€§åå’Œå€¼éƒ½æ˜¯ç”¨åŒå¼•å·ï¼Œä¸è¦æŠŠæ³¨é‡Šå†™åˆ°å¯¹è±¡é‡Œé¢ï¼Œå¯¹è±¡æ•°æ®è¦ç®€æ´
+- ä¸è¦éšæ„ç»“æ„åŒ–åˆ†ç»„å¯¹è±¡ï¼Œæ¨èæ˜¯ç”¨æ‰å¹³åŒ–æ–¹å¼ï¼Œå±‚æ¬¡ä¸è¦å¤ªå¤æ‚
+- å‘½åæ–¹å¼è¦æœ‰æ„ä¹‰ï¼Œæ¯”å¦‚å•å¤æ•°è¡¨ç¤º
+- é©¼å³°å¼å‘½åï¼Œéµå¾ªBeanè§„èŒƒ
+- ä½¿ç”¨ç‰ˆæœ¬æ¥æ§åˆ¶å˜æ›´å†²çª
+- å¯¹äºä¸€äº›å…³é”®å­—ï¼Œä¸è¦æ‹¿æ¥åškey
+- å¦‚æœä¸€ä¸ªå±æ€§æ˜¯å¯é€‰çš„æˆ–è€…åŒ…å«ç©ºå€¼æˆ–nullå€¼ï¼Œè€ƒè™‘ä»JSONä¸­å»æ‰è¯¥å±æ€§ï¼Œé™¤éå®ƒçš„å­˜åœ¨æœ‰å¾ˆå¼ºçš„è¯­ä¹‰åŸå› 
+- åºåˆ—åŒ–æšä¸¾ç±»å‹æ—¶ï¼Œä½¿ç”¨nameè€Œä¸æ˜¯value
+- æ—¥æœŸè¦ç”¨æ ‡å‡†æ ¼å¼å¤„ç†
+- è®¾è®¡å¥½é€šç”¨çš„åˆ†é¡µå‚æ•°
+- è®¾è®¡å¥½å¼‚å¸¸å¤„ç†
 
-## Ê¹ÓÃJSONÊµÏÖAPI
-[JSON API](http://jsonapi.org.cn/format/)ÓëGoogle JSON·ç¸ñÖ¸ÄÏÓĞºÜ¶à¿ÉÒÔÏà»¥²ÎÕÕÖ®´¦¡£
+### 4.2 ä½¿ç”¨JSONå®ç°API
+[JSON API](http://jsonapi.org.cn/format/)ä¸Google JSONé£æ ¼æŒ‡å—æœ‰å¾ˆå¤šå¯ä»¥ç›¸äº’å‚ç…§ä¹‹å¤„ã€‚
 
-[JSON API](http://jsonapi.org.cn/format/)ÊÇÊı¾İ½»»¥¹æ·¶£¬ÓÃÒÔ¶¨Òå¿Í»§¶ËÈçºÎ»ñÈ¡ÓëĞŞ¸Ä×ÊÔ´£¬ÒÔ¼°·şÎñÆ÷ÈçºÎÏìÓ¦¶ÔÓ¦ÇëÇó¡£
+[JSON API](http://jsonapi.org.cn/format/)æ˜¯æ•°æ®äº¤äº’è§„èŒƒï¼Œç”¨ä»¥å®šä¹‰å®¢æˆ·ç«¯å¦‚ä½•è·å–ä¸ä¿®æ”¹èµ„æºï¼Œä»¥åŠæœåŠ¡å™¨å¦‚ä½•å“åº”å¯¹åº”è¯·æ±‚ã€‚
 
-JSON APIÉè¼ÆÓÃÀ´×îĞ¡»¯ÇëÇóµÄÊıÁ¿£¬ÒÔ¼°¿Í»§¶ËÓë·şÎñÆ÷¼ä´«ÊäµÄÊı¾İÁ¿¡£ÔÚ¸ßĞ§ÊµÏÖµÄÍ¬Ê±£¬ÎŞĞèÎşÉü¿É¶ÁĞÔ¡¢Áé»îĞÔºÍ¿É·¢ÏÖĞÔ¡£
+JSON APIè®¾è®¡ç”¨æ¥æœ€å°åŒ–è¯·æ±‚çš„æ•°é‡ï¼Œä»¥åŠå®¢æˆ·ç«¯ä¸æœåŠ¡å™¨é—´ä¼ è¾“çš„æ•°æ®é‡ã€‚åœ¨é«˜æ•ˆå®ç°çš„åŒæ—¶ï¼Œæ— éœ€ç‰ºç‰²å¯è¯»æ€§ã€çµæ´»æ€§å’Œå¯å‘ç°æ€§ã€‚
 
-## REST
+## 5. REST
  todo list
  - dubbox
  - resteasy
@@ -109,76 +110,489 @@ JSON APIÉè¼ÆÓÃÀ´×îĞ¡»¯ÇëÇóµÄÊıÁ¿£¬ÒÔ¼°¿Í»§¶ËÓë·şÎñÆ÷¼ä´«ÊäµÄÊı¾İÁ¿¡£ÔÚ¸ßĞ§ÊµÏÖµÄ
  
 ![image](https://github.com/kimmking/kk/blob/master/images/json/rest.jpg?raw=true)
 
-## SwaggerUIÊµÏÖAPIÎÄµµ¹ÜÀíÓëÔÚÏß²âÊÔ
+## 6. SwaggerUIå®ç°APIæ–‡æ¡£ç®¡ç†ä¸åœ¨çº¿æµ‹è¯•
  todo list
  
 ![image](https://github.com/kimmking/kk/blob/master/images/json/json03.png?raw=true)
 
-## ³¡¾°·ÖÎö
-JSONµÄÊ¹ÓÃ£¬ÒÀ¾İ²»Í¬ÓÃÍ¾£¬ÓĞ¼¸¸öµäĞÍµÄ³¡¾°£º
-1. ÄÚ²¿ºóÌ¨ÏµÍ³Ö®¼äµÄÊı¾İ´«Êä£¬´ËÖÖÇé¿öÏÂ»ùÓÚHTTPµÄJSON¸ñÊ½ÆäÊµÃ»ÓĞÓÅÊÆ¡£
-2. Ç°ºóÌ¨Ö®¼äµÄAPIµ÷ÓÃ£¬µäĞÍµÄÊÇÇ°¶Ë×÷ÎªReact/VUE/AngularJS/ExtJSµÈ¿ò¼Ü×öµÄ£¬Ç°ºó¶ËÊ¹ÓÃJSON½»»¥¡£
-- ´ËÊ±¿ÉÒÔÊ¹ÓÃÀàËÆDubboxÖ®ÀàµÄ¿ò¼Ü£¬»òÕßÔ­Ê¼Ò»Ğ©SpringMVCµÄControllerÉÏÖ±½Ó@ResponseBody»ò@RestControllerÒ²¿ÉÒÔ¡£
-- Ç¿ÁÒ½¨ÒéÔÚDubboxÖ®ÀàµÄrestÖ®ÉÏÔÙ¼ÓÒ»¸öNginx×ª·¢£¬ÕâÑùÒ»Ğ©²ßÂÔµÄ¿ØÖÆ£¬±ÈÈçÍ¬Ô´µÄ¿ØÖÆ¡¢¼òµ¥µÄ»º´æ²ßÂÔ¡¢°²È«²ßÂÔµÈ¶¼¿ÉÒÔ·Åµ½NginxÉÏÀ´×ö£¬Ò²ÀûÓÚ¶à¸ö»úÆ÷Ê±µÄ¸ºÔØ¾ùºâ¡£
-- ½¨ÒéÊ¹ÓÃswaggerUIÀ´×Ô¶¯ÊµÏÖAPIÎÄµµºÍÔÚÏß²âÊÔ¡£¹¦ÄÜºÜÇ¿´ó£¬²Ù×÷¼òµ¥£¬¶øÇÒ¿ÉÒÔmock½Ó¿Ú£¬ÔÚºóÌ¨Ã»ÓĞ×öºÃÖ®Ç°£¬Ç°Ì¨¾Í¿ÉÒÔÏÈ¿ª·¢ÁË¡£
-- ¿ÉÒÔÊ¹ÓÃRestUnit»òSoapUIÀ´ÊµÏÖ×Ô¶¯»¯²âÊÔÓëÑ¹Á¦²âÊÔ¡£
+## 7. JSONä½¿ç”¨åœºæ™¯åˆ†æ
+JSONçš„ä½¿ç”¨ï¼Œä¾æ®ä¸åŒç”¨é€”ï¼Œæœ‰å‡ ä¸ªå…¸å‹çš„åœºæ™¯ï¼š
+1. å†…éƒ¨åå°ç³»ç»Ÿä¹‹é—´çš„æ•°æ®ä¼ è¾“ï¼Œæ­¤ç§æƒ…å†µä¸‹åŸºäºHTTPçš„JSONæ ¼å¼å…¶å®æ²¡æœ‰ä¼˜åŠ¿ã€‚
+2. å‰åå°ä¹‹é—´çš„APIè°ƒç”¨ï¼Œå…¸å‹çš„æ˜¯å‰ç«¯ä½œä¸ºReact/VUE/AngularJS/ExtJSç­‰æ¡†æ¶åšçš„ï¼Œå‰åç«¯ä½¿ç”¨JSONäº¤äº’ã€‚
+- æ­¤æ—¶å¯ä»¥ä½¿ç”¨ç±»ä¼¼Dubboxä¹‹ç±»çš„æ¡†æ¶ï¼Œæˆ–è€…åŸå§‹ä¸€äº›SpringMVCçš„Controllerä¸Šç›´æ¥@ResponseBodyæˆ–@RestControllerä¹Ÿå¯ä»¥ã€‚
+- å¼ºçƒˆå»ºè®®åœ¨Dubboxä¹‹ç±»çš„restä¹‹ä¸Šå†åŠ ä¸€ä¸ªNginxè½¬å‘ï¼Œè¿™æ ·ä¸€äº›ç­–ç•¥çš„æ§åˆ¶ï¼Œæ¯”å¦‚åŒæºçš„æ§åˆ¶ã€ç®€å•çš„ç¼“å­˜ç­–ç•¥ã€å®‰å…¨ç­–ç•¥ç­‰éƒ½å¯ä»¥æ”¾åˆ°Nginxä¸Šæ¥åšï¼Œä¹Ÿåˆ©äºå¤šä¸ªæœºå™¨æ—¶çš„è´Ÿè½½å‡è¡¡ã€‚
+- å»ºè®®ä½¿ç”¨swaggerUIæ¥è‡ªåŠ¨å®ç°APIæ–‡æ¡£å’Œåœ¨çº¿æµ‹è¯•ã€‚åŠŸèƒ½å¾ˆå¼ºå¤§ï¼Œæ“ä½œç®€å•ï¼Œè€Œä¸”å¯ä»¥mockæ¥å£ï¼Œåœ¨åå°æ²¡æœ‰åšå¥½ä¹‹å‰ï¼Œå‰å°å°±å¯ä»¥å…ˆå¼€å‘äº†ã€‚
+- å¯ä»¥ä½¿ç”¨RestUnitæˆ–SoapUIæ¥å®ç°è‡ªåŠ¨åŒ–æµ‹è¯•ä¸å‹åŠ›æµ‹è¯•ã€‚
 
-3. Ìá¹©¸øµÚÈı·½µÄ¿ª·¢½Ó¿ÚAPI
-»ù±¾Í¬ÉÏ£¬¿ÉÒÔ²Î¿¼Google JSON·ç¸ñÖ¸ÄÏÓëJSON APIÕÂ½Ú¡£
+3. æä¾›ç»™ç¬¬ä¸‰æ–¹çš„å¼€å‘æ¥å£API
+åŸºæœ¬åŒä¸Šï¼Œå¯ä»¥å‚è€ƒGoogle JSONé£æ ¼æŒ‡å—ä¸JSON APIç« èŠ‚ã€‚
 
-## jsonµÄÒ»Ğ©¾­Ñé
-×î½ü°ïÃ¦´¦ÀíÒ»ÏÂFastjsonµÄbugÎÊÌâ£¬·¢ÏÖ×î³£¼ûµÄÆäÊµÊÇ´ó¼ÒÊ¹ÓÃµÄ²»¹æ·¶ĞÔ£¬ÕâÑùÅöµ½¸÷ÖÖ¿ÓµÄ¿ÉÄÜĞÔ¾ÍºÜ´ó¡£¸ù¾İÎÒÆ½Ê±Ê¹ÓÃµÄ¾­Ñé£¬ÒÔ¼°×Ü½á´ó¼Ò³£¼ûµÄÎÊÌâ£¬¹éÄÉÈçÏÂ£º
+## 8.JSONçš„ä¸€äº›ç»éªŒ
+æœ€è¿‘åœ¨ååŠ©å¤„ç†ä¸€äº›Fastjsonçš„bugé—®é¢˜ï¼Œå‘ç°æœ€å¸¸è§çš„å…¶å®æ˜¯å¤§å®¶ä½¿ç”¨çš„ä¸è§„èŒƒæ€§ï¼Œè¿™æ ·ç¢°åˆ°å„ç§å‘çš„å¯èƒ½æ€§å°±å¾ˆå¤§ã€‚æ ¹æ®æˆ‘å¹³æ—¶ä½¿ç”¨çš„ç»éªŒï¼Œä»¥åŠæ€»ç»“å¤§å®¶å¸¸è§çš„é—®é¢˜ï¼Œå½’çº³å¦‚ä¸‹ï¼š
 
-### 1.×ñÑ­Java Beans¹æ·¶ÓëJSON¹æ·¶
-Êµ¼ù¸æËßÎÒÃÇ£º×ñÑ­beans¹æ·¶ºÍJSON¹æ·¶µÄ·½Ê½£¬ÄÜ¼õÉÙ´ó²¿·ÖµÄÎÊÌâ£¬±ÈÈçÕıÈ·ÊµÏÖsetter¡¢getter£¬ÓÃ±ğÃû¾Í¼Óannotation¡£×¢Òâ»ù±¾ÀàĞÍµÄÆ¥Åä×ª»»£¬±ÈÈçÔÚfastjsonµÄissue¼ûµ½ÊÔÍ¼°Ñ"{"a":{}}"ÖĞµÄa×ª»»³ÉListµÄ¡£
+### 7.1 éµå¾ªJava Beansè§„èŒƒä¸JSONè§„èŒƒ
+å®è·µå‘Šè¯‰æˆ‘ä»¬ï¼šéµå¾ªbeansè§„èŒƒå’ŒJSONè§„èŒƒçš„æ–¹å¼ï¼Œèƒ½å‡å°‘å¤§éƒ¨åˆ†çš„é—®é¢˜ï¼Œæ¯”å¦‚æ­£ç¡®å®ç°setterã€getterï¼Œç”¨åˆ«åå°±åŠ annotationã€‚æ³¨æ„åŸºæœ¬ç±»å‹çš„åŒ¹é…è½¬æ¢ï¼Œæ¯”å¦‚åœ¨fastjsonçš„issueè§åˆ°è¯•å›¾æŠŠ"{"a":{}}"ä¸­çš„aè½¬æ¢æˆListçš„ã€‚
 
-### 2.Ê¹ÓÃÕı³£µÄkey
-¾¡Á¿²»ÒªÊ¹ÓÃÊı×ÖµÈ×Ö·û¿ªÍ·µÄkey£¬¾¡Á¿Ê¹ÓÃ·ûºÏJavaµÄclass»òpropertyÃüÃû¹æ·¶µÄkey£¬ÕâÑù»á¼õÉÙ²»±ØÒªµÄ³åÍ»¡£ÔÚjsonpath»òjsÀï£¬a.1¿ÉÄÜ»á±»½âÊÍ³Éa[1]»òa["1"]£¬ÕâĞ©¶¼»á´øÀ´²»±ØÒªµÄÂé·³¡£
+### 7.2 ä½¿ç”¨æ­£å¸¸çš„key
+å°½é‡ä¸è¦ä½¿ç”¨æ•°å­—ç­‰å­—ç¬¦å¼€å¤´çš„keyï¼Œå°½é‡ä½¿ç”¨ç¬¦åˆJavaçš„classæˆ–propertyå‘½åè§„èŒƒçš„keyï¼Œè¿™æ ·ä¼šå‡å°‘ä¸å¿…è¦çš„å†²çªã€‚åœ¨jsonpathæˆ–jsé‡Œï¼Œa.1å¯èƒ½ä¼šè¢«è§£é‡Šæˆa[1]æˆ–a["1"]ï¼Œè¿™äº›éƒ½ä¼šå¸¦æ¥ä¸å¿…è¦çš„éº»çƒ¦ã€‚
 
-### 3.¹ØÓÚÈÕÆÚ´¦Àí
-ÕâÒ»µãÇ°ÃæµÄGoogle JSON·ç¸ñÖ¸ÄÏÀïÒ²Ìáµ½ÁË£¬¾¡Á¿Ê¹ÓÃ±ê×¼µÄÈÕÆÚ¸ñÊ½¡£»òÕßĞòÁĞ»¯ºÍ·´ĞòÁĞ»¯Àï¶¼ÊÇÓÃÍ¬ÑùµÄdatePattern¸ñÊ½¡£
+### 7.3 å…³äºæ—¥æœŸå¤„ç†
+è¿™ä¸€ç‚¹å‰é¢çš„Google JSONé£æ ¼æŒ‡å—é‡Œä¹Ÿæåˆ°äº†ï¼Œå°½é‡ä½¿ç”¨æ ‡å‡†çš„æ—¥æœŸæ ¼å¼ã€‚æˆ–è€…åºåˆ—åŒ–å’Œååºåˆ—åŒ–é‡Œéƒ½æ˜¯ç”¨åŒæ ·çš„datePatternæ ¼å¼ã€‚
 
-### 4.¹ØÓÚ×Ô¶¨ÒåĞòÁĞ»¯Óë·´ĞòÁĞ»¯
-¶ÔÓÚĞÂÊÖÀ´Ëµ£¬×Ô¶¨ÒåĞòÁĞ»¯ÊÇÒ»ÇĞ×ï¶ñµÄ¸ùÔ´¡£
+### 7.4 å…³äºè‡ªå®šä¹‰åºåˆ—åŒ–ä¸ååºåˆ—åŒ–ï¼ˆåŒ…æ‹¬è¿‡æ»¤å™¨ï¼‰
+å¯¹äºæ–°æ‰‹æ¥è¯´ï¼Œè‡ªå®šä¹‰åºåˆ—åŒ–æ˜¯ä¸€åˆ‡ç½ªæ¶çš„æ ¹æºã€‚
 
-¾¡Á¿²»ÒªÊ¹ÓÃ×Ô¶¨ÒåĞòÁĞ»¯£¬³ı·ÇÍò²»µÃÒÑ£¬ÓÅÏÈ¿¼ÂÇÊ¹ÓÃ×¢½â¹ıÂË£¬±ğÃûµÈ·½Ê½£¬ÉõÖÁÊÇÖØĞÂ½¨Ò»¸öVOÀàÀ´×é×°Êµ¼ÊĞèÒªµÄÊôĞÔ¡£Ê¹ÓÃ×Ô¶¨ÒåĞòÁĞ»¯Ê±Ò»ÇĞÒªĞ¡ĞÄ£¬ÒòÎªÕâÑù»áµ¼ÖÂÁ½¸öÎÊÌâ£º
-- ¸Ä±äÁËpojo <-> jsonstring µÄ×ÔÈ»¶ÔÓ¦¹ØÏµ£¬´Ó¶ø²»ÀûÓÚÔÄ¶Á´úÂëºÍÅÅ²éÎÊÌâ£¬Äã¸Ä±äµÄ¹ØÏµÎŞ·¨¼òµ¥µÄ´ÓbeanºÍjsonÉÏ¿´³öÀ´ÁË£»
-- ·´ĞòÁĞ»¯¿ÉÄÜ³ö´í£¬ÒòÎª¶ÔÓ¦²»ÉÏÔ­À´µÄÊôĞÔÁË¡£
+å°½é‡ä¸è¦ä½¿ç”¨è‡ªå®šä¹‰åºåˆ—åŒ–ï¼Œé™¤éä¸‡ä¸å¾—å·²ï¼Œä¼˜å…ˆè€ƒè™‘ä½¿ç”¨æ³¨è§£è¿‡æ»¤ï¼Œåˆ«åç­‰æ–¹å¼ï¼Œç”šè‡³æ˜¯é‡æ–°å»ºä¸€ä¸ªVOç±»æ¥ç»„è£…å®é™…éœ€è¦çš„å±æ€§ã€‚ä½¿ç”¨è‡ªå®šä¹‰åºåˆ—åŒ–æ—¶ä¸€åˆ‡è¦å°å¿ƒï¼Œå› ä¸ºè¿™æ ·ä¼šå¯¼è‡´ä¸¤ä¸ªé—®é¢˜ï¼š
+- æ”¹å˜äº†pojo <-> jsonstring çš„è‡ªç„¶å¯¹åº”å…³ç³»ï¼Œä»è€Œä¸åˆ©äºé˜…è¯»ä»£ç å’Œæ’æŸ¥é—®é¢˜ï¼Œä½ æ”¹å˜çš„å…³ç³»æ— æ³•ç®€å•çš„ä»beanå’Œjsonä¸Šçœ‹å‡ºæ¥äº†ï¼›
+- ååºåˆ—åŒ–å¯èƒ½å‡ºé”™ï¼Œå› ä¸ºå¯¹åº”ä¸ä¸ŠåŸæ¥çš„å±æ€§äº†ã€‚
 
-Èç¹ûÖ»ÊÇĞòÁĞ»¯·¢³öÈ¥£¨ÏìÓ¦£©µÄÊÇJSONÊı¾İ¡¢´«¹ıÀ´£¨ÇëÇó£©µÄÊı¾İ¸ñÊ½¸úJSONÎŞ¹Ø»òÕßÊÇ±ê×¼µÄ£¬´ËÊ±×Ô¶¨ÒåĞòÁĞ»¯¾ÍÎŞËùÎ½ÁË£¬·´ÕıÊÇÒª½ÓÊÕ·½À´´¦Àí¡£
+å¦‚æœåªæ˜¯åºåˆ—åŒ–å‘å‡ºå»ï¼ˆå“åº”ï¼‰çš„æ˜¯JSONæ•°æ®ã€ä¼ è¿‡æ¥ï¼ˆè¯·æ±‚ï¼‰çš„æ•°æ®æ ¼å¼è·ŸJSONæ— å…³æˆ–è€…æ˜¯æ ‡å‡†çš„ï¼Œæ­¤æ—¶è‡ªå®šä¹‰åºåˆ—åŒ–å°±æ— æ‰€è°“äº†ï¼Œåæ­£æ˜¯è¦æ¥æ”¶æ–¹æ¥å¤„ç†ã€‚
 
-### 5.JsonObjectµÄÊ¹ÓÃ
-JsonObjectÊÇJSON×Ö·û´®Óëpojo¶ÔÏó×ª»»¹ı³ÌÖĞµÄÖĞ¼ä±í´ïÀàĞÍ£¬ÖĞ¼ä¶ÔÏó£¬²»Òª»ìÓÃ£¬¾¡Á¿²»ÒªÓÃ
+### 7.5 JSONObjectçš„ä½¿ç”¨
+JSONObjectæ˜¯JSONå­—ç¬¦ä¸²ä¸pojoå¯¹è±¡è½¬æ¢è¿‡ç¨‹ä¸­çš„ä¸­é—´è¡¨è¾¾ç±»å‹ï¼Œå®ç°äº†Mapæ¥å£ï¼Œå¯ä»¥çœ‹åšæ˜¯ä¸€ä¸ªæ¨¡æ‹ŸJSONå¯¹è±¡é”®å€¼å¯¹å†åŠ ä¸Šå¤šå±‚åµŒå¥—çš„æ•°æ®é›†åˆï¼Œå¯¹è±¡çš„æ¯ä¸€ä¸ªåŸºæœ¬ç±»å‹å±æ€§æ˜¯mapé‡Œçš„ä¸€ä¸ªkey-valueï¼Œä¸€ä¸ªéåŸºæœ¬ç±»å‹å±æ€§æ˜¯ä¸€ä¸ªåµŒå¥—çš„JSONObjectå¯¹è±¡ï¼ˆkeyæ˜¯å±æ€§åç§°ï¼Œvalueæ˜¯è¡¨ç¤ºè¿™ä¸ªå±æ€§å€¼çš„å¯¹è±¡çš„JSONObjectï¼‰ã€‚å¦‚æœä»¥å‰ç”¨è¿‡apache beanutilsé‡Œçš„DynamicBeanä¹‹ç±»çš„ï¼Œå°±çŸ¥é“JSONObjectä¹Ÿæ˜¯ä¸€ç§åŠ¨æ€æè¿°Beançš„å®ç°ï¼Œç›¸å½“äºæ˜¯æ‹†è§£äº†Beanæœ¬èº«çš„ç»“æ„ä¸æ•°æ®ã€‚è¿™æ—¶å€™ç”±äºJSONObjecté‡Œå¯èƒ½ä¼šæ²¡æœ‰è®°å½•å…¨éƒ¨çš„Beanç±»å‹æ•°æ®ï¼Œä¾‹å¦‚æ³›å‹çš„å…·ä½“å­ç±»å‹ä¹‹ç±»çš„å…ƒæ•°æ®ï¼Œå¦‚æœJSONObjectä¸æ­£å¸¸çš„POJOæ··ç”¨ï¼Œå‡ºç°é—®é¢˜çš„æ¦‚ç‡è¾ƒé«˜ã€‚
+ä¸‹åˆ—æ–¹å¼å°½é‡ä¸è¦ä½¿ç”¨ï¼š
+```java
+public class TestBean{
+    @Setter @Getter
+    private TestBean1 testBean1;
+    
+    @Setter @Getter
+    private JSONObject testBean2; // å°½é‡ä¸è¦åœ¨POJOé‡Œç”¨JSONObject
+}
+```
+åº”è¯¥ä»è®¾è®¡ä¸Šæ”¹ä¸ºéƒ½ç”¨POJOæ¯”è¾ƒåˆé€‚:
+```java
+public class TestBean{
+    @Setter @Getter
+    private TestBean1 testBean1;
+    
+    @Setter @Getter
+    private TestBean2 testBean2;; // ä½¿ç”¨POJO
+}
+```
+ç›¸å¯¹çš„ï¼Œå†™ä¸€äº›ä¸´æ—¶æ€§çš„æµ‹è¯•ä»£ç ï¼Œdemoä»£ç ï¼Œå¯ä»¥ç›´æ¥å…¨éƒ¨ç”¨JSONObjectå…ˆå¿«é€Ÿrunèµ·æ¥ã€‚
 
-### 6.HibernateÏà¹ØÎÊÌâ
-ÀÁ¼ÓÔØÓë¼¶Áª£¬¿ÉÄÜµ¼ÖÂ³öÏÖÎÊÌâ£¬ÀıÈçhibernate£¬½¨Òé·â×°Ò»²ãVOÀàĞÍÀ´ĞòÁĞ»¯¡£Ê¹ÓÃVOÀà»¹ÓĞÒ»¸öºÃ´¦£¬¾ÍÊÇ¿ÉÒÔÈ¥µôÒ»Ğ©Ã»ÓÃµÄÊôĞÔ£¬¼õÉÙÊı¾İÁ¿£¬Í¬Ê±¿ÉÒÔ¼ÓÉÏ¶îÍâµÄÊôĞÔ¡£
+åŒç†ï¼Œjsonstringä¸­åµŒå¥—jsonstringä¹Ÿå°½é‡ä¸è¦ç”¨ï¼Œä¾‹å¦‚ï¼š
+```javascript
+{
+    "name":"zhangsan",
+    "score":"{\"math\":78,\"history\":82}"
+}
+```
+åº”è¯¥æ”¹ä¸ºå…¨éƒ¨éƒ½æ˜¯JSONé£æ ¼çš„ç»“æ„ï¼š
+```javascript
+{
+    "name":"zhangsan",
+    "score":{
+        "math":78,
+        "history":82
+    }
+}
+```
 
-### 7.Éî²ãÇ¶Ì×Óë·ºĞÍÎÊÌâ
-¾¡Á¿²»ÒªÔÚÊ¹ÓÃ¹ı¶àµÄ²ã´ÎÇ¶Ì×µÄÍ¬Ê±Ê¹ÓÃ·ºĞÍ£¨List¡¢MapµÈ£©£¬¿ÉÄÜµ¼ÖÂÀàĞÍ¶ªÊ§£¬¶øÇÒÎÊÌâ±È½ÏÄÑ²é¡£
+å¦å¤–ï¼Œå¯¹äºjsonstringè½¬POJOï¼ˆæˆ–POJOè½¬jsonstringï¼‰ï¼Œå°½é‡ä½¿ç”¨ç›´æ¥è½¬çš„æ–¹å¼ï¼Œè€Œä¸æ˜¯å…ˆè½¬æˆJSONObjectè¿‡æ¸¡çš„æ–¹å¼ã€‚ç‰¹åˆ«æ˜¯å¯¹äºFastjsonï¼Œç”±äºæ€§èƒ½ä¼˜åŒ–çš„è€ƒè™‘ï¼Œè¿™ä¸¤ä¸ªæ‰§è¡Œçš„ä»£ç æ˜¯ä¸ä¸€æ ·çš„ï¼Œå¯èƒ½å¯¼è‡´ä¸ä¸€æ ·çš„ç»“æœã€‚
+```java
+    String jsonstring = "{\"a\":12}";
+    
+    // ä¸æ¨èè¿™ç§æ–¹å¼
+    // é™¤éè¿™é‡Œéœ€è¦å¯¹jsonObjectåšä¸€äº›ç®€å•å¤„ç†
+    JSONObject jsonObject = JSON.parseObject(jsonstring);
+    A a = jsonObject.toJavaObject(A.class);
+    
+    // æ¨èæ–¹å¼
+    A a = JSON.parseObject(jsonstring, A.class);
+    
+```
 
-### 8.³éÏóÀàĞÍÓë×ÓÀàĞÍÎÊÌâ
-¾¡Á¿²»ÒªÔÚÍ¬Ò»¸öBeanµÄ²ã´Î½á¹¹ÀïÊ¹ÓÃ¶à¸ö×ÓÀàĞÍ¶ÔÏó£¬¿ÉÄÜµ¼ÖÂÀàĞÍ¶ªÊ§£¬¶øÇÒÎÊÌâ±È½ÏÄÑ²é¡£µ±È»ÎÒÃÇ¿ÉÒÔÍ¨¹ı´úÂëÏÔÊ¾µÄ´«µİ¸÷ÖÖÕıÈ·µÄÀàĞÍ£¬µ«ÊÇÕâÑù×öÒıÈëÁË¸ü¶àµÄ²»È·¶¨ĞÔ¡£Á¼ºÃµÄ×ö·¨Ó¦¸ÃÊÇÒ»¿ªÊ¼Éè¼ÆÊ±¾Í±ÜÃâ³öÏÖÕâĞ©ÎÊÌâ¡£
+### 7.6 Hibernateç›¸å…³é—®é¢˜
+æ‡’åŠ è½½ä¸çº§è”ï¼Œå¯èƒ½å¯¼è‡´å‡ºç°é—®é¢˜ï¼Œä¾‹å¦‚hibernateï¼Œå»ºè®®å°è£…ä¸€å±‚VOç±»å‹æ¥åºåˆ—åŒ–ã€‚ä½¿ç”¨VOç±»è¿˜æœ‰ä¸€ä¸ªå¥½å¤„ï¼Œå°±æ˜¯å¯ä»¥å»æ‰ä¸€äº›æ²¡ç”¨çš„å±æ€§ï¼Œå‡å°‘æ•°æ®é‡ï¼ŒåŒæ—¶å¯ä»¥åŠ ä¸Šé¢å¤–çš„å±æ€§ã€‚
 
-### 9.±ÜÃâÑ­»·ÒıÓÃ
-¾¡Á¿±ÜÃâÑ­»·ÒıÓÃ£¬Õâ¸öËäÈ»¿ÉÒÔÍ¨¹ıĞòÁĞ»¯ÌØĞÔ½ûµô£¬µ«ÊÇÈç¹ûÄÜ±ÜÃâÔò±ÜÃâ¡£
+### 7.7 æ·±å±‚åµŒå¥—ä¸æ³›å‹é—®é¢˜
+å°½é‡ä¸è¦åœ¨ä½¿ç”¨è¿‡å¤šçš„å±‚æ¬¡åµŒå¥—çš„åŒæ—¶ä½¿ç”¨æ³›å‹ï¼ˆListã€Mapç­‰ï¼‰ï¼Œå¯èƒ½å¯¼è‡´ç±»å‹ä¸¢å¤±ï¼Œè€Œä¸”é—®é¢˜æ¯”è¾ƒéš¾æŸ¥ã€‚
 
-## fastjsonµÄ×î¼ÑÊµ¼ù
-### 1.ĞòÁĞ»¯Ò»¸ö¶ÔÏó³ÉJSON×Ö·û´®
+### 7.8 æŠ½è±¡ç±»å‹ä¸å­ç±»å‹é—®é¢˜
+å°½é‡ä¸è¦åœ¨åŒä¸€ä¸ªBeançš„å±‚æ¬¡ç»“æ„é‡Œä½¿ç”¨å¤šä¸ªå­ç±»å‹å¯¹è±¡ï¼Œå¯èƒ½å¯¼è‡´ç±»å‹ä¸¢å¤±ï¼Œè€Œä¸”é—®é¢˜æ¯”è¾ƒéš¾æŸ¥ã€‚å½“ç„¶æˆ‘ä»¬å¯ä»¥é€šè¿‡ä»£ç æ˜¾ç¤ºçš„ä¼ é€’å„ç§æ­£ç¡®çš„ç±»å‹ï¼Œä½†æ˜¯è¿™æ ·åšå¼•å…¥äº†æ›´å¤šçš„ä¸ç¡®å®šæ€§ã€‚è‰¯å¥½çš„åšæ³•åº”è¯¥æ˜¯ä¸€å¼€å§‹è®¾è®¡æ—¶å°±é¿å…å‡ºç°è¿™äº›é—®é¢˜ã€‚
 
-### 2.·´ĞòÁĞ»¯Ò»¸öJSON×Ö·û´®³ÉJava¶ÔÏó
+### 7.9 é¿å…å¾ªç¯å¼•ç”¨
+å°½é‡é¿å…å¾ªç¯å¼•ç”¨ï¼Œè¿™ä¸ªè™½ç„¶å¯ä»¥é€šè¿‡åºåˆ—åŒ–ç‰¹æ€§ç¦æ‰ï¼Œä½†æ˜¯å¦‚æœèƒ½é¿å…åˆ™é¿å…ã€‚
 
-### 3.ÈÕÆÚ´¦Àí
+### 7.10 æ³¨æ„ç¼–ç å’Œä¸å¯è§å­—ç¬¦ï¼ˆç‰¹åˆ«æ˜¯äºŒè¿›åˆ¶æ•°æ®æµï¼‰
+å¯¹äºInputStreamã€OutputStreamçš„å¤„ç†ï¼Œæœ‰æ—¶å€™ä¼šæŠ¥ä¸€äº›å¥‡æ€ªçš„é”™è¯¯ï¼Œnot matchä¹‹ç±»çš„ï¼Œè¿™æ—¶å€™ä¹Ÿè®¸æˆ‘ä»¬çœ‹æ—¥å¿—é‡Œçš„jsonå­—ç¬¦ä¸²å¯èƒ½å¾ˆæ­£å¸¸ï¼Œä½†å°±æ˜¯å‡ºé”™ã€‚
 
-### 4.×Ô¶¨ÒåĞòÁĞ»¯Óë·´ĞòÁĞ»¯
+è¿™æ—¶å¯èƒ½å°±æ˜¯ç¼–ç çš„é—®é¢˜äº†ï¼Œå¯èƒ½æ˜¯å¯¼è‡´å­—ç¬¦é”™ä¹±ï¼Œä¹Ÿå¯èƒ½æ˜¯å› ä¸ºUTF-8æ–‡ä»¶çš„BOMå¤´ï¼Œè¿™äº›æ½œåœ¨çš„é—®é¢˜å¯èƒ½åœ¨äºŒè¿›åˆ¶æ•°æ®è½¬æ–‡æœ¬çš„æ—¶å€™ï¼Œå› ä¸ºä¸€äº›ä¸å¯è§å­—ç¬¦æ— æ³•æ˜¾ç¤ºï¼Œå¯¼è‡´æ—¥å¿—çœ‹èµ·æ¥åªæœ‰æ­£å¸¸å­—ç¬¦è€Œæ˜¯æ­£ç¡®çš„ï¼Œé—®é¢˜å¾ˆéš¾æ’æŸ¥ã€‚
 
-### 5.³£¼ûĞòÁĞ»¯ÌØĞÔµÄÊ¹ÓÃ
+å¤„ç†åŠæ³•å°±æ˜¯æŒ‰äºŒè¿›åˆ¶çš„æ–¹å¼æŠŠStreamä¿å­˜èµ·æ¥ï¼Œç„¶åæŒ‰hexæ–¹å¼æŸ¥çœ‹ï¼Œçœ‹çœ‹æ˜¯å¦æœ‰å¤šä½™å­—ç¬¦ï¼Œæˆ–è€…å…¶ä»–é”™è¯¯ã€‚
 
-### 6.Annotation×¢½âµÄÊ¹ÓÃ
+## 8.fastjsonçš„æœ€ä½³å®è·µ
+### 8.1 Mavenä¸‹å¼•å…¥Fastjson
+pom.xmlæ–‡ä»¶é‡Œæ·»åŠ ä¾èµ–å³å¯ï¼š
+```xml
+<dependency>
+    <groupId>com.alibaba</groupId>
+    <artifactId>fastjson</artifactId>
+    <version>1.2.32</version>
+</dependency>
+```
 
-### 7.ÓëSpring MVCµÄÅäºÏÊ¹ÓÃ
+### 8.2 åºåˆ—åŒ–ä¸€ä¸ªå¯¹è±¡æˆJSONå­—ç¬¦ä¸²
+```java
+User user = new User();
+user.setName("æ ¡é•¿");
+user.setAge(3);
+user.setSalary(new BigDecimal("123456789.0123"));
+String jsonString = JSON.toJSONString(user);
+System.out.println(jsonString);
+// è¾“å‡º {"age":3,"name":"æ ¡é•¿","old":false,"salary":123456789.0123}
+```
 
-### 8.ÓëSpring BootµÄ¼¯³ÉÊ¹ÓÃ
+### 8.3 ååºåˆ—åŒ–ä¸€ä¸ªJSONå­—ç¬¦ä¸²æˆJavaå¯¹è±¡
+```java
+ String jsonString = "{\"age\":3,\"birthdate\":1496738822842,\"name\":\"æ ¡é•¿\",\"old\":true,\"salary\":123456789.0123}";
+ User u = JSON.parseObject(jsonString ,User.class);
+ System.out.println(u.getName());
+ // è¾“å‡º æ ¡é•¿
 
-## fastjsonµÄÉè¼ÆËµÃ÷
+String jsonStringArray = "[{\"age\":3,\"birthdate\":1496738822842,\"name\":\"æ ¡é•¿\",\"old\":true,\"salary\":123456789.0123}]";
+List<User> userList = JSON.parseArray(jsonStringArray, User.class);
+System.out.println(userList.size());
+// è¾“å‡º 1
+```
+
+### 8.4 æ—¥æœŸæ ¼å¼å¤„ç†
+Fastjsonèƒ½è¯†åˆ«ä¸‹é¢è¿™ä¹ˆå¤šç§æ—¥æœŸæ ¼å¼çš„å­—ç¬¦ä¸²ï¼š
+```java
+    private final static String            defaultPatttern    = "yyyy-MM-dd HH:mm:ss";
+    private final static DateTimeFormatter defaultFormatter   = DateTimeFormatter.ofPattern(defaultPatttern);
+    private final static DateTimeFormatter formatter_dt19_tw  = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+    private final static DateTimeFormatter formatter_dt19_cn  = DateTimeFormatter.ofPattern("yyyyå¹´Mæœˆdæ—¥ HH:mm:ss");
+    private final static DateTimeFormatter formatter_dt19_cn_1  = DateTimeFormatter.ofPattern("yyyyå¹´Mæœˆdæ—¥ Hæ—¶måˆ†sç§’");
+    private final static DateTimeFormatter formatter_dt19_kr  = DateTimeFormatter.ofPattern("yyyyë…„Mì›”dì¼ HH:mm:ss");
+    private final static DateTimeFormatter formatter_dt19_us  = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm:ss");
+    private final static DateTimeFormatter formatter_dt19_eur = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+    private final static DateTimeFormatter formatter_dt19_de  = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+    private final static DateTimeFormatter formatter_dt19_in  = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+    private final static DateTimeFormatter formatter_d8       = DateTimeFormatter.ofPattern("yyyyMMdd");
+    private final static DateTimeFormatter formatter_d10_tw   = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    private final static DateTimeFormatter formatter_d10_cn   = DateTimeFormatter.ofPattern("yyyyå¹´Mæœˆdæ—¥");
+    private final static DateTimeFormatter formatter_d10_kr   = DateTimeFormatter.ofPattern("yyyyë…„Mì›”dì¼");
+    private final static DateTimeFormatter formatter_d10_us   = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+    private final static DateTimeFormatter formatter_d10_eur  = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private final static DateTimeFormatter formatter_d10_de   = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+    private final static DateTimeFormatter formatter_d10_in   = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+
+    private final static DateTimeFormatter ISO_FIXED_FORMAT =
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.systemDefault());
+
+    private final static String formatter_iso8601_pattern     = "yyyy-MM-dd'T'HH:mm:ss";
+    private final static DateTimeFormatter formatter_iso8601  = DateTimeFormatter.ofPattern(formatter_iso8601_pattern);
+```
+é»˜è®¤åºåˆ—åŒ–Dateè¾“å‡ºä½¿ç”¨"yyyy-MM-dd HH:mm:ss"æ ¼å¼ï¼Œå¯ä»¥ç”¨UseISO8601DateFormatç‰¹æ€§æ¢æˆ"yyyy-MM-dd'T'HH:mm:ss"æ ¼å¼ã€‚
+
+
+```java
+JSON.defaultTimeZone = TimeZone.getTimeZone("Asia/Shanghai");
+JSON.defaultLocale = Locale.US;
+        
+public static class Model {
+        @JSONField(format = "MMM dd, yyyy h:mm:ss aa")
+        private java.util.Date date;
+
+        public java.util.Date getDate() {
+            return date;
+        }
+
+        public void setDate(java.util.Date date) {
+            this.date = date;
+        }
+
+        @JSONField(format = "MMM-dd-yyyy h:mm:ss aa")
+        public java.sql.Date date2;
+}
+```
+
+### 8.5 å¸¸è§åºåˆ—åŒ–ç‰¹æ€§çš„ä½¿ç”¨
+Fastjsonçš„åºåˆ—åŒ–ç‰¹æ€§å®šä¹‰åœ¨æšä¸¾ç±»com\alibaba\fastjson\serializer\SerializerFeature.javaä¸­ï¼Œç›®å‰æ­£å¥½æœ‰30é¡¹ã€‚
+å¯ä»¥é€šè¿‡è®¾ç½®å¤šä¸ªç‰¹æ€§åˆ°FastjsonConfigä¸­å…¨å±€ä½¿ç”¨ï¼Œä¹Ÿå¯ä»¥åœ¨æŸä¸ªå…·ä½“çš„JSON.writeJSONStringæ—¶ä½œä¸ºå‚æ•°ä½¿ç”¨ã€‚
+1. QuoteFieldNames, //keyä½¿ç”¨å¼•å·
+2. UseSingleQuotes, //ä½¿ç”¨å•å¼•å·
+3. WriteMapNullValue, //è¾“å‡ºMapçš„nullå€¼
+4. WriteEnumUsingToString, //æšä¸¾å±æ€§è¾“å‡ºtoStringçš„ç»“æœ
+5. WriteEnumUsingName, //æšä¸¾æ•°æ®è¾“å‡ºname
+6. UseISO8601DateFormat, //ä½¿ç”¨æ—¥æœŸæ ¼å¼
+7. WriteNullListAsEmpty, //Listä¸ºç©ºåˆ™è¾“å‡º[]
+8. WriteNullStringAsEmpty, //Stringä¸ºç©ºåˆ™è¾“å‡º""
+9. WriteNullNumberAsZero, //Numberç±»å‹ä¸ºç©ºåˆ™è¾“å‡º0
+10. WriteNullBooleanAsFalse, //Booleanç±»å‹ä¸ºç©ºåˆ™è¾“å‡ºfalse
+11. SkipTransientField,
+12. SortField, //æ’åºå­—æ®µ
+13. WriteTabAsSpecial,
+14. PrettyFormat, // æ ¼å¼åŒ–JSONç¼©è¿›
+15. WriteClassName, // è¾“å‡ºç±»å
+16. DisableCircularReferenceDetect, // ç¦æ­¢å¾ªç¯å¼•ç”¨
+17. WriteSlashAsSpecial, // å¯¹æ–œæ â€™/â€™è¿›è¡Œè½¬ä¹‰
+18. BrowserCompatible,
+19. WriteDateUseDateFormat, // å…¨å±€ä¿®æ”¹æ—¥æœŸæ ¼å¼,é»˜è®¤ä¸ºfalseã€‚JSON.DEFFAULT_DATE_FORMAT = â€œyyyy-MM-ddâ€;JSON.toJSONString(obj, SerializerFeature.WriteDateUseDateFormat);
+20. NotWriteRootClassName,
+21. DisableCheckSpecialChar,
+22. BeanToArray,
+23. WriteNonStringKeyAsString,
+24. NotWriteDefaultValue,
+25. BrowserSecure,
+26. IgnoreNonFieldGetter,
+27. WriteNonStringValueAsString,
+28. IgnoreErrorGetter,
+29. WriteBigDecimalAsPlain,
+30. MapSortField
+
+
+ä½¿ç”¨ç¤ºä¾‹å¦‚ä¸‹ï¼ˆå¯ä»¥[å‚è§æ­¤å¤„](http://blog.csdn.net/u010246789/article/details/52539576)ï¼‰ï¼š
+```java
+Word word = new Word();
+word.setA("a");
+word.setB(2);
+word.setC(true);
+word.setD("d");
+word.setE("");
+word.setF(null);
+word.setDate(new Date());
+
+System.out.println(JSON.toJSONString(word));
+System.out.println(JSON.toJSONString(word, SerializerFeature.PrettyFormat,
+    SerializerFeature.WriteMapNullValue, SerializerFeature.WriteNullStringAsEmpty,
+    SerializerFeature.DisableCircularReferenceDetect,
+    SerializerFeature.WriteNullListAsEmpty));
+
+```
+
+### 8.6 Annotationæ³¨è§£çš„ä½¿ç”¨
+1) JSONField
+
+å¯ä»¥é…ç½®åœ¨å±æ€§ï¼ˆsetterã€getterï¼‰å’Œå­—æ®µï¼ˆå¿…é¡»æ˜¯public fieldï¼‰ä¸Šã€‚
+è¯¦æƒ…å‚è§æ­¤å¤„ï¼š[JSONFieldç”¨æ³•](https://github.com/alibaba/fastjson/wiki/JSONField)
+
+```java
+package com.alibaba.fastjson.annotation;
+
+public @interface JSONField {
+    // é…ç½®åºåˆ—åŒ–å’Œååºåˆ—åŒ–çš„é¡ºåºï¼Œ1.1.42ç‰ˆæœ¬ä¹‹åæ‰æ”¯æŒ
+    int ordinal() default 0;
+
+     // æŒ‡å®šå­—æ®µçš„åç§°
+    String name() default "";
+
+    // æŒ‡å®šå­—æ®µçš„æ ¼å¼ï¼Œå¯¹æ—¥æœŸæ ¼å¼æœ‰ç”¨
+    String format() default "";
+
+    // æ˜¯å¦åºåˆ—åŒ–
+    boolean serialize() default true;
+
+    // æ˜¯å¦ååºåˆ—åŒ–
+    boolean deserialize() default true;
+}
+```
+
+```java
+@JSONField(name="ID")
+public int getId() {return id;}
+
+// é…ç½®dateåºåˆ—åŒ–å’Œååºåˆ—ä½¿ç”¨yyyyMMddæ—¥æœŸæ ¼å¼
+@JSONField(format="yyyyMMdd")
+public Date date1;  
+
+ // ä¸åºåˆ—åŒ–
+ @JSONField(serialize=false)
+ public Date date2;
+
+ // ä¸ååºåˆ—åŒ–
+ @JSONField(deserialize=false)
+ public Date date3;
+
+ // æŒ‰ordinalæ’åº
+ @JSONField(ordinal = 2)
+ private int f1;
+
+ @JSONField(ordinal = 1)
+ private int f2;
+    
+```
+
+2) JSONType
+
+- è‡ªå®šä¹‰åºåˆ—åŒ–ï¼š[ObjectSerializer](https://github.com/alibaba/fastjson/wiki/JSONType_serializer)
+- å­ç±»å‹å¤„ç†ï¼š[SeeAlso](https://github.com/alibaba/fastjson/wiki/JSONType_seeAlso_cn)
+- JSONType.alphabeticå±æ€§: fastjsonç¼ºçœæ—¶ä¼šä½¿ç”¨å­—æ¯åºåºåˆ—åŒ–ï¼Œå¦‚æœä½ æ˜¯å¸Œæœ›æŒ‰ç…§java fields/gettersçš„è‡ªç„¶é¡ºåºåºåˆ—åŒ–ï¼Œå¯ä»¥é…ç½®JSONType.alphabeticï¼Œä½¿ç”¨æ–¹æ³•å¦‚ä¸‹ï¼š
+
+```java
+@JSONType(alphabetic = false)
+public static class B {
+    public int f2;
+    public int f1;
+    public int f0;
+}
+```
+
+### 8.7 è‡ªå®šä¹‰åºåˆ—åŒ–ä¸ååºåˆ—åŒ–
+
+- è‡ªå®šä¹‰åºåˆ—åŒ–
+
+åªéœ€è¦2æ­¥ï¼š[å‚è§æ­¤å¤„](https://github.com/alibaba/fastjson/wiki/ObjectSerializer_cn)
+1)å®ç°ObjectSerializer
+```java
+public class CharacterSerializer implements ObjectSerializer {
+    public void write(JSONSerializer serializer, 
+                      Object object, 
+                      Object fieldName, 
+                      Type fieldType, 
+                      int features) throws IOException {
+        SerializeWriter out = serializer.out;
+    
+        Character value = (Character) object;
+        if (value == null) {
+            out.writeString("");
+            return;
+        }
+    
+        char c = value.charValue();
+        if (c == 0) {
+            out.writeString("\u0000");
+        } else {
+            out.writeString(value.toString());
+        }
+    }
+}
+```
+
+2)æ³¨å†ŒObjectSerializer
+```java
+SerializeConfig.getGlobalInstance().put(Character.class, new CharacterSerializer());
+```
+
+- è‡ªå®šä¹‰ååºåˆ—åŒ–
+
+åªéœ€è¦2æ­¥ï¼š[å‚è§æ­¤å¤„](https://github.com/alibaba/fastjson/wiki/ObjectDeserializer_cn)
+
+1)è‡ªå®šä¹‰å®ç°ObjectDeserializer
+```java
+public static enum OrderActionEnum {
+                                    FAIL(1), SUCC(0);
+
+    private int code;
+
+    OrderActionEnum(int code){
+        this.code = code;
+    }
+}
+
+public static class Msg {
+
+    public OrderActionEnum actionEnum;
+    public String          body;
+}
+
+public static class OrderActionEnumDeser implements ObjectDeserializer {
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> T deserialze(DefaultJSONParser parser, Type type, Object fieldName) {
+        Integer intValue = parser.parseObject(int.class);
+        if (intValue == 1) {
+            return (T) OrderActionEnum.FAIL;
+        } else if (intValue == 0) {
+            return (T) OrderActionEnum.SUCC;
+        }
+        throw new IllegalStateException();
+    }
+
+    @Override
+    public int getFastMatchToken() {
+        return JSONToken.LITERAL_INT;
+    }
+
+}
+```
+
+2)æ³¨å†Œå¹¶ä½¿ç”¨ObjectDeserializer
+
+```java
+ParserConfig.getGlobalInstance().putDeserializer(OrderActionEnum.class, new OrderActionEnumDeser());
+
+{
+    Msg msg = JSON.parseObject("{\"actionEnum\":1,\"body\":\"A\"}", Msg.class);
+    Assert.assertEquals(msg.body, "A");
+    Assert.assertEquals(msg.actionEnum, OrderActionEnum.FAIL);
+}
+{
+    Msg msg = JSON.parseObject("{\"actionEnum\":0,\"body\":\"B\"}", Msg.class);
+    Assert.assertEquals(msg.body, "B");
+    Assert.assertEquals(msg.actionEnum, OrderActionEnum.SUCC);
+}
+```
+
+### 8.8 è‡ªå®šä¹‰åºåˆ—åŒ–ä¹‹è¿‡æ»¤å™¨
+- å…¨å±€çš„è¿‡æ»¤å™¨ï¼šJSON.toJSONStringæ–¹æ³•çš„å‚æ•°ä¸­å¯ä»¥é…ç½®å¤„ç†æ‰€æœ‰ç±»å‹çš„SerializeFilter
+- ç±»çº§åˆ«è¿‡æ»¤å™¨ï¼š[Class_Level_SerializeFilter](https://github.com/alibaba/fastjson/wiki/Class_Level_SerializeFilter)
+- å±æ€§è¿‡æ»¤å™¨ï¼š[ä½¿ç”¨PropertyPreFilterè¿‡æ»¤å±æ€§](https://github.com/alibaba/fastjson/wiki/%E4%BD%BF%E7%94%A8SimplePropertyPreFilter%E8%BF%87%E6%BB%A4%E5%B1%9E%E6%80%A7)
+- å¤šä½™å­—æ®µå¤„ç†å™¨ï¼š[ExtraProcessor ç”¨äºå¤„ç†å¤šä½™çš„å­—æ®µã€
+ExtraTypeProviderç”¨äºå¤„ç†å¤šä½™å­—æ®µæ—¶æä¾›ç±»å‹ä¿¡æ¯](https://github.com/alibaba/fastjson/wiki/ParseProcess)
+- å®šåˆ¶ååºåˆ—åŒ–ï¼š[åœ¨fastjson-1.2.9ç‰ˆæœ¬åæä¾›äº†ExtraProcessableæ¥å£ï¼Œç”¨äºå®šåˆ¶å¯¹è±¡çš„ååºåˆ—åŒ–åŠŸèƒ½](https://github.com/alibaba/fastjson/wiki/ExtraProcessable)ï¼Œå¯ç”¨äºæ·»åŠ æ²¡æœ‰çš„å­—æ®µ
+- æ ‡ç­¾è¿‡æ»¤ï¼š[JSONField(label)ï¼Œç›¸å½“äºåˆ†ç»„](https://github.com/alibaba/fastjson/wiki/LabelFilter)
+- è‡ªåŠ¨è¯†åˆ«åµŒå¥—å¯¹è±¡å­ç±»å‹ï¼š[FieldTypeResolver](https://github.com/alibaba/fastjson/wiki/FieldTypeResolver)
+
+### 8.9 ä¸Spring MVCçš„é…åˆä½¿ç”¨
+
+FastJson æä¾›äº†Spring MVC HttpMessageConverterçš„å®ç°ï¼Œå°†POJOè¾“å‡ºä¸ºJSONPï¼Œæ”¯æŒè·¨åŸŸæ•°æ®è®¿é—®ã€‚
+
+FastJsonpHttpMessageConverter4 for Spring MVC 4.2+ï¼š
+
+```xml
+<mvc:annotation-driven>
+    <mvc:message-converters>
+        <bean
+            class="com.alibaba.fastjson.support.spring.FastJsonpHttpMessageConverter4">
+            <property name="supportedMediaTypes">
+                <list>
+                    <value>application/json;charset=UTF-8</value>
+                </list>
+            </property>
+        </bean>
+    </mvc:message-converters>
+</mvc:annotation-driven>
+
+<mvc:default-servlet-handler />
+
+<bean id="fastJsonpResponseBodyAdvice" class="com.alibaba.fastjson.support.spring.FastJsonpResponseBodyAdvice">
+    <constructor-arg>
+        <list>
+            <value>callback</value>
+            <value>jsonp</value>
+        </list>
+    </constructor-arg>
+</bean>
+```
+
+[è¯¦ç»†é…ç½®å‚è§æ­¤å¤„](https://github.com/alibaba/fastjson/wiki/FastJsonpHttpMessageConverter4_CN)
+
+### 8.10 ä¸Spring Bootçš„é›†æˆä½¿ç”¨
+
+å‚è§æ­¤å¤„ï¼š[spring-boot-starter-fastjson](https://github.com/storezhang/utils/tree/master/spring-boot-starter-fastjson)
+
+
+### 8.11 æ³›å‹å¤„ç†
+[åœ¨fastjsonä¸­æä¾›äº†ä¸€ä¸ªç”¨äºå¤„ç†æ³›å‹ååºåˆ—åŒ–çš„ç±»TypeReference](https://github.com/alibaba/fastjson/wiki/Typ)eReference
+
+### 8.12jaxrsæ”¯æŒ
+FastJson æä¾›äº†JAX-RS Providerçš„å®ç° [FastJsonProvider](https://github.com/alibaba/fastjson/wiki/FastJsonProvider_CN)
+
+å¯ç”¨äºåœ¨æ„å»ºRestfulæœåŠ¡æ—¶ä½¿ç”¨FastJsonè¿›è¡Œæ•°æ®çš„Serialize and Deserialize
+
+### 8.13 swaggeræ”¯æŒ
+
+[å¢åŠ å¯¹swaggerçš„æ”¯æŒ](https://github.com/alibaba/fastjson/pull/716)
+
+
+æ›´å¤šåŠŸèƒ½ todo list
+
+## 9.Fastjsonçš„è®¾è®¡è¯´æ˜
 todo list
 
