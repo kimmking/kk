@@ -603,4 +603,5 @@ todo list
 1. 代码是怎么样的：[源码分析](http://blog.csdn.net/swust_chenpeng/article/details/19617561)
 1. fastjson里的各种对象：[概念分析](http://www.csdn.net/article/2014-09-25/2821866)
 1. fastjson与安全：[fastjson远程代码执行漏洞技术分析与防护方案](http://blog.nsfocus.net/analysis-protection-fastjson-remote-code-execution-vulnerability/)，建议直接升级到1.2.28/1.2.29或者更新版本来保证系统安全
+1. [json ref方式的讨论](http://wenshao.iteye.com/blog/1146897)
 
