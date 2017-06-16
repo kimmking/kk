@@ -132,16 +132,16 @@ JSON的使用，依据不同用途，有几个典型的场景：
 ## 8.JSON的一些经验
 最近在协助处理一些Fastjson的bug问题，发现最常见的其实是大家使用的不规范性，这样碰到各种坑的可能性就很大。根据我平时使用的经验，以及总结大家常见的问题，归纳如下：
 
-### 7.1 遵循Java Beans规范与JSON规范
+### 8.1 遵循Java Beans规范与JSON规范
 实践告诉我们：遵循beans规范和JSON规范的方式，能减少大部分的问题，比如正确实现setter、getter，用别名就加annotation。注意基本类型的匹配转换，比如在fastjson的issue见到试图把"{"a":{}}"中的a转换成List的。
 
-### 7.2 使用正常的key
+### 8.2 使用正常的key
 尽量不要使用数字等字符开头的key，尽量使用符合Java的class或property命名规范的key，这样会减少不必要的冲突。在jsonpath或js里，a.1可能会被解释成a[1]或a["1"]，这些都会带来不必要的麻烦。
 
-### 7.3 关于日期处理
+### 8.3 关于日期处理
 这一点前面的Google JSON风格指南里也提到了，尽量使用标准的日期格式。或者序列化和反序列化里都是用同样的datePattern格式。
 
-### 7.4 关于自定义序列化与反序列化（包括过滤器）
+### 8.4 关于自定义序列化与反序列化（包括过滤器）
 对于新手来说，自定义序列化是一切罪恶的根源。
 
 尽量不要使用自定义序列化，除非万不得已，优先考虑使用注解过滤，别名等方式，甚至是重新建一个VO类来组装实际需要的属性。使用自定义序列化时一切要小心，因为这样会导致两个问题：
@@ -150,7 +150,7 @@ JSON的使用，依据不同用途，有几个典型的场景：
 
 如果只是序列化发出去（响应）的是JSON数据、传过来（请求）的数据格式跟JSON无关或者是标准的，此时自定义序列化就无所谓了，反正是要接收方来处理。
 
-### 7.5 JSONObject的使用
+### 8.5 JSONObject的使用
 JSONObject是JSON字符串与pojo对象转换过程中的中间表达类型，实现了Map接口，可以看做是一个模拟JSON对象键值对再加上多层嵌套的数据集合，对象的每一个基本类型属性是map里的一个key-value，一个非基本类型属性是一个嵌套的JSONObject对象（key是属性名称，value是表示这个属性值的对象的JSONObject）。如果以前用过apache beanutils里的DynamicBean之类的，就知道JSONObject也是一种动态描述Bean的实现，相当于是拆解了Bean本身的结构与数据。这时候由于JSONObject里可能会没有记录全部的Bean类型数据，例如泛型的具体子类型之类的元数据，如果JSONObject与正常的POJO混用，出现问题的概率较高。
 下列方式尽量不要使用：
 ```java
@@ -206,27 +206,27 @@ public class TestBean{
     
 ```
 
-### 7.6 Hibernate相关问题
+### 8.6 Hibernate相关问题
 懒加载与级联，可能导致出现问题，例如hibernate，建议封装一层VO类型来序列化。使用VO类还有一个好处，就是可以去掉一些没用的属性，减少数据量，同时可以加上额外的属性。
 
-### 7.7 深层嵌套与泛型问题
+### 8.7 深层嵌套与泛型问题
 尽量不要在使用过多的层次嵌套的同时使用泛型（List、Map等），可能导致类型丢失，而且问题比较难查。
 
-### 7.8 抽象类型与子类型问题
+### 8.8 抽象类型与子类型问题
 尽量不要在同一个Bean的层次结构里使用多个子类型对象，可能导致类型丢失，而且问题比较难查。当然我们可以通过代码显示的传递各种正确的类型，但是这样做引入了更多的不确定性。良好的做法应该是一开始设计时就避免出现这些问题。
 
-### 7.9 避免循环引用
+### 8.9 避免循环引用
 尽量避免循环引用，这个虽然可以通过序列化特性禁掉，但是如果能避免则避免。
 
-### 7.10 注意编码和不可见字符（特别是二进制数据流）
+### 8.10 注意编码和不可见字符（特别是二进制数据流）
 对于InputStream、OutputStream的处理，有时候会报一些奇怪的错误，not match之类的，这时候也许我们看日志里的json字符串可能很正常，但就是出错。
 
 这时可能就是编码的问题了，可能是导致字符错乱，也可能是因为UTF-8文件的BOM头，这些潜在的问题可能在二进制数据转文本的时候，因为一些不可见字符无法显示，导致日志看起来只有正常字符而是正确的，问题很难排查。
 
 处理办法就是按二进制的方式把Stream保存起来，然后按hex方式查看，看看是否有多余字符，或者其他错误。
 
-## 8.fastjson的最佳实践
-### 8.1 Maven下引入Fastjson
+## 9.fastjson的最佳实践
+### 9.1 Maven下引入Fastjson
 pom.xml文件里添加依赖即可：
 ```xml
 <dependency>
@@ -236,7 +236,7 @@ pom.xml文件里添加依赖即可：
 </dependency>
 ```
 
-### 8.2 序列化一个对象成JSON字符串
+### 9.2 序列化一个对象成JSON字符串
 ```java
 User user = new User();
 user.setName("校长");
@@ -247,7 +247,7 @@ System.out.println(jsonString);
 // 输出 {"age":3,"name":"校长","old":false,"salary":123456789.0123}
 ```
 
-### 8.3 反序列化一个JSON字符串成Java对象
+### 9.3 反序列化一个JSON字符串成Java对象
 ```java
  String jsonString = "{\"age\":3,\"birthdate\":1496738822842,\"name\":\"校长\",\"old\":true,\"salary\":123456789.0123}";
  User u = JSON.parseObject(jsonString ,User.class);
@@ -260,7 +260,7 @@ System.out.println(userList.size());
 // 输出 1
 ```
 
-### 8.4 日期格式处理
+### 9.4 日期格式处理
 Fastjson能识别下面这么多种日期格式的字符串：
 ```java
     private final static String            defaultPatttern    = "yyyy-MM-dd HH:mm:ss";
@@ -313,7 +313,7 @@ public static class Model {
 }
 ```
 
-### 8.5 常见序列化特性的使用
+### 9.5 常见序列化特性的使用
 Fastjson的序列化特性定义在枚举类com\alibaba\fastjson\serializer\SerializerFeature.java中，目前正好有30项。
 可以通过设置多个特性到FastjsonConfig中全局使用，也可以在某个具体的JSON.writeJSONString时作为参数使用。
 1. QuoteFieldNames, //key使用引号
@@ -367,7 +367,7 @@ System.out.println(JSON.toJSONString(word, SerializerFeature.PrettyFormat,
 
 ```
 
-### 8.6 Annotation注解的使用
+### 9.6 Annotation注解的使用
 1) JSONField
 
 可以配置在属性（setter、getter）和字段（必须是public field）上。
@@ -434,7 +434,7 @@ public static class B {
 }
 ```
 
-### 8.7 自定义序列化与反序列化
+### 9.7 自定义序列化与反序列化
 
 - 自定义序列化
 
@@ -532,7 +532,7 @@ ParserConfig.getGlobalInstance().putDeserializer(OrderActionEnum.class, new Orde
 }
 ```
 
-### 8.8 自定义序列化之过滤器
+### 9.8 自定义序列化之过滤器
 - 全局的过滤器：JSON.toJSONString方法的参数中可以配置处理所有类型的SerializeFilter
 - 类级别过滤器：[Class_Level_SerializeFilter](https://github.com/alibaba/fastjson/wiki/Class_Level_SerializeFilter)
 - 属性过滤器：[使用PropertyPreFilter过滤属性](https://github.com/alibaba/fastjson/wiki/%E4%BD%BF%E7%94%A8SimplePropertyPreFilter%E8%BF%87%E6%BB%A4%E5%B1%9E%E6%80%A7)
@@ -542,7 +542,7 @@ ExtraTypeProvider用于处理多余字段时提供类型信息](https://github.c
 - 标签过滤：[JSONField(label)，相当于分组](https://github.com/alibaba/fastjson/wiki/LabelFilter)
 - 自动识别嵌套对象子类型：[FieldTypeResolver](https://github.com/alibaba/fastjson/wiki/FieldTypeResolver)
 
-### 8.9 与Spring MVC的配合使用
+### 9.9 与Spring MVC的配合使用
 
 FastJson 提供了Spring MVC HttpMessageConverter的实现，将POJO输出为JSONP，支持跨域数据访问。
 
@@ -576,27 +576,70 @@ FastJsonpHttpMessageConverter4 for Spring MVC 4.2+：
 
 [详细配置参见此处](https://github.com/alibaba/fastjson/wiki/FastJsonpHttpMessageConverter4_CN)
 
-### 8.10 与Spring Boot的集成使用
+### 9.10 与Spring Boot的集成使用
 
 参见此处：[spring-boot-starter-fastjson](https://github.com/storezhang/utils/tree/master/spring-boot-starter-fastjson)
 
 
-### 8.11 泛型处理
+### 9.11 泛型处理
 [在fastjson中提供了一个用于处理泛型反序列化的类TypeReference](https://github.com/alibaba/fastjson/wiki/Typ)eReference
 
-### 8.12jaxrs支持
+### 9.12jaxrs支持
 FastJson 提供了JAX-RS Provider的实现 [FastJsonProvider](https://github.com/alibaba/fastjson/wiki/FastJsonProvider_CN)
 
 可用于在构建Restful服务时使用FastJson进行数据的Serialize and Deserialize
 
-### 8.13 swagger支持
+### 9.13 swagger支持
 
 [增加对swagger的支持](https://github.com/alibaba/fastjson/pull/716)
+[dubbox与swagger的集成](https://github.com/kimmking/kk/blob/master/technotes/dubbo-integration-swagger.md)
 
+### 9.14 默认参数配置
+
+1）序列化
+```
+  public static int DEFAULT_GENERATE_FEATURE;
+    static {
+        int features = 0;
+        features |= SerializerFeature.QuoteFieldNames.getMask(); // key用引号引起来
+        features |= SerializerFeature.SkipTransientField.getMask(); // 忽略transient
+        features |= SerializerFeature.WriteEnumUsingName.getMask(); // enum输出name
+        features |= SerializerFeature.SortField.getMask();          // 字段排序
+
+        {
+            String featuresProperty = IOUtils.getStringProperty("fastjson.serializerFeatures.MapSortField");
+            int mask = SerializerFeature.MapSortField.getMask();
+            if ("true".equals(featuresProperty)) {
+                features |= mask;
+            } else if ("false".equals(featuresProperty)) {
+                features &= ~mask;
+            }
+        }
+
+        DEFAULT_GENERATE_FEATURE = features;
+    }
+```
+
+2）反序列化
+
+```
+static {
+        int features = 0;
+        features |= Feature.AutoCloseSource.getMask();//检查json格式
+        features |= Feature.InternFieldNames.getMask();//
+        features |= Feature.UseBigDecimal.getMask(); //数值使用BigDecimal
+        features |= Feature.AllowUnQuotedFieldNames.getMask();//支持key不用引号引起来
+        features |= Feature.AllowSingleQuotes.getMask();//支持单引号
+        features |= Feature.AllowArbitraryCommas.getMask();//支持连续多个逗号
+        features |= Feature.SortFeidFastMatch.getMask();//排序后快速匹配
+        features |= Feature.IgnoreNotMatch.getMask();//忽略不匹配的属性和字段
+        DEFAULT_PARSER_FEATURE = features;
+    }
+```
 
 更多功能 todo list
 
-## 9.Fastjson的设计说明
+## 10.Fastjson的设计说明
 todo list
 
 1. 为什么fastjson这么快：[fastjson内幕](http://wenshao.iteye.com/blog/1142031/)
@@ -604,4 +647,5 @@ todo list
 1. fastjson里的各种对象：[概念分析](http://www.csdn.net/article/2014-09-25/2821866)
 1. fastjson与安全：[fastjson远程代码执行漏洞技术分析与防护方案](http://blog.nsfocus.net/analysis-protection-fastjson-remote-code-execution-vulnerability/)，建议直接升级到1.2.28/1.2.29或者更新版本来保证系统安全
 1. [json ref方式的讨论](http://wenshao.iteye.com/blog/1146897)
+1. fastjson为什么这么有保障，答案是有3837个testcase： mvn test => Tests run: 3837, Failures: 0, Errors: 0, Skipped: 0
 
