@@ -1,6 +1,9 @@
-# JSON最佳实践
+title: JSON最佳实践
+date: 2017-06-06 23:00:05
+tags: json
+---
 
-JSON是一种文本方式展示结构化数据的方式，从产生的时候开始就由于其简单好用、跨平台，特别适合HTTP下数据的传输（例如现在很流行的REST）而被广泛使用。
+JSON是一种文本方式展示结构化数据的方式，从产生的时候开始就由于其简单好用、跨平台，特别适合HTTP下数据的传输（例如现在很流行的REST）而被广泛使用。by kimmking@163.com
 
 ## 1、JSON是什么
 JSON起源于1999年的[JS语言规范ECMA262的一个子集](http://javascript.crockford.com/)（即15.12章节描述了格式与解析），后来2003年作为一个数据格式[ECMA404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)（很囧的序号有不有？）发布。
@@ -19,7 +22,8 @@ JSON的应用很广泛，这里有超过100种语言下的JSON库：[json.org](h
 - 再加上结构可以嵌套，进而可以用来表达复杂的数据
 - 一个简单实例：
 
-```javascript
+```
+
    {
       "Image": {
           "Width":  800,
@@ -32,8 +36,9 @@ JSON的应用很广泛，这里有超过100种语言下的JSON库：[json.org](h
           },
           "IDs": [116, 943, 234, 38793]
         }
-   }
-``` 
+   } 
+
+```
 
 ### 2.2 优点
 - 基于纯文本，所以对于人类阅读是很友好的。
@@ -44,6 +49,8 @@ JSON的应用很广泛，这里有超过100种语言下的JSON库：[json.org](h
 缺点也很明显：
 - 性能一般，文本表示的数据一般来说比二进制大得多，在数据传输上和解析处理上都要更影响性能。
 - 缺乏schema，跟同是文本数据格式的XML比，在类型的严格性和丰富性上要差很多。XML可以借由XSD或DTD来定义复杂的格式，并由此来验证XML文档是否符合格式要求，甚至进一步的，可以基于XSD来生成具体语言的操作代码，例如apache xmlbeans。并且这些工具组合到一起，形成一套庞大的生态，例如基于XML可以实现SOAP和WSDL，一系列的ws-*规范。但是我们也可以看到JSON在缺乏规范的情况下，实际上有更大一些的灵活性，特别是近年来REST的快速发展，已经有一些schema相关的发展(例如[理解JSON Schema](https://spacetelescope.github.io/understanding-json-schema/index.html)，[使用JSON Schema](http://usingjsonschema.com/downloads/)， [在线schema测试](http://azimi.me/json-schema-view/demo/demo.html))，也有类似于WSDL的[WADL](https://www.w3.org/Submission/wadl/)出现。
+
+<!-- more -->
 
 ## 3. 常用技术与工具
 ### 3.1 相关技术以及与XML的关系
@@ -141,7 +148,7 @@ JSON的使用，依据不同用途，有几个典型的场景：
 ### 8.3 关于日期处理
 这一点前面的Google JSON风格指南里也提到了，尽量使用标准的日期格式。或者序列化和反序列化里都是用同样的datePattern格式。
 
-### 8.4 关于自定义序列化与反序列化（包括过滤器）
+### 8.4 自定义序列化与反序列化
 对于新手来说，自定义序列化是一切罪恶的根源。
 
 尽量不要使用自定义序列化，除非万不得已，优先考虑使用注解过滤，别名等方式，甚至是重新建一个VO类来组装实际需要的属性。使用自定义序列化时一切要小心，因为这样会导致两个问题：
@@ -153,6 +160,7 @@ JSON的使用，依据不同用途，有几个典型的场景：
 ### 8.5 JSONObject的使用
 JSONObject是JSON字符串与pojo对象转换过程中的中间表达类型，实现了Map接口，可以看做是一个模拟JSON对象键值对再加上多层嵌套的数据集合，对象的每一个基本类型属性是map里的一个key-value，一个非基本类型属性是一个嵌套的JSONObject对象（key是属性名称，value是表示这个属性值的对象的JSONObject）。如果以前用过apache beanutils里的DynamicBean之类的，就知道JSONObject也是一种动态描述Bean的实现，相当于是拆解了Bean本身的结构与数据。这时候由于JSONObject里可能会没有记录全部的Bean类型数据，例如泛型的具体子类型之类的元数据，如果JSONObject与正常的POJO混用，出现问题的概率较高。
 下列方式尽量不要使用：
+
 ```java
 public class TestBean{
     @Setter @Getter
@@ -161,8 +169,11 @@ public class TestBean{
     @Setter @Getter
     private JSONObject testBean2; // 尽量不要在POJO里用JSONObject
 }
-```
+
+``` 
+
 应该从设计上改为都用POJO比较合适:
+
 ```java
 public class TestBean{
     @Setter @Getter
@@ -171,17 +182,22 @@ public class TestBean{
     @Setter @Getter
     private TestBean2 testBean2;; // 使用POJO
 }
-```
+
+``` 
+
 相对的，写一些临时性的测试代码，demo代码，可以直接全部用JSONObject先快速run起来。
 
 同理，jsonstring中嵌套jsonstring也尽量不要用，例如：
+
 ```javascript
 {
     "name":"zhangsan",
     "score":"{\"math\":78,\"history\":82}"
 }
 ```
+
 应该改为全部都是JSON风格的结构：
+
 ```javascript
 {
     "name":"zhangsan",
@@ -193,6 +209,7 @@ public class TestBean{
 ```
 
 另外，对于jsonstring转POJO（或POJO转jsonstring），尽量使用直接转的方式，而不是先转成JSONObject过渡的方式。特别是对于Fastjson，由于性能优化的考虑，这两个执行的代码是不一样的，可能导致不一样的结果。
+
 ```java
     String jsonstring = "{\"a\":12}";
     
@@ -218,7 +235,7 @@ public class TestBean{
 ### 8.9 避免循环引用
 尽量避免循环引用，这个虽然可以通过序列化特性禁掉，但是如果能避免则避免。
 
-### 8.10 注意编码和不可见字符（特别是二进制数据流）
+### 8.10 注意编码和不可见字符
 对于InputStream、OutputStream的处理，有时候会报一些奇怪的错误，not match之类的，这时候也许我们看日志里的json字符串可能很正常，但就是出错。
 
 这时可能就是编码的问题了，可能是导致字符错乱，也可能是因为UTF-8文件的BOM头，这些潜在的问题可能在二进制数据转文本的时候，因为一些不可见字符无法显示，导致日志看起来只有正常字符而是正确的，问题很难排查。
@@ -228,6 +245,7 @@ public class TestBean{
 ## 9.fastjson的最佳实践
 ### 9.1 Maven下引入Fastjson
 pom.xml文件里添加依赖即可：
+
 ```xml
 <dependency>
     <groupId>com.alibaba</groupId>
@@ -237,6 +255,7 @@ pom.xml文件里添加依赖即可：
 ```
 
 ### 9.2 序列化一个对象成JSON字符串
+
 ```java
 User user = new User();
 user.setName("校长");
@@ -248,6 +267,7 @@ System.out.println(jsonString);
 ```
 
 ### 9.3 反序列化一个JSON字符串成Java对象
+
 ```java
  String jsonString = "{\"age\":3,\"birthdate\":1496738822842,\"name\":\"校长\",\"old\":true,\"salary\":123456789.0123}";
  User u = JSON.parseObject(jsonString ,User.class);
@@ -262,6 +282,7 @@ System.out.println(userList.size());
 
 ### 9.4 日期格式处理
 Fastjson能识别下面这么多种日期格式的字符串：
+
 ```java
     private final static String            defaultPatttern    = "yyyy-MM-dd HH:mm:ss";
     private final static DateTimeFormatter defaultFormatter   = DateTimeFormatter.ofPattern(defaultPatttern);
@@ -349,6 +370,7 @@ Fastjson的序列化特性定义在枚举类com\alibaba\fastjson\serializer\Seri
 
 
 使用示例如下（可以[参见此处](http://blog.csdn.net/u010246789/article/details/52539576)）：
+
 ```java
 Word word = new Word();
 word.setA("a");
@@ -441,6 +463,7 @@ public static class B {
 只需要2步：[参见此处](https://github.com/alibaba/fastjson/wiki/ObjectSerializer_cn)
 
 1)实现ObjectSerializer
+
 ```java
 public class CharacterSerializer implements ObjectSerializer {
     public void write(JSONSerializer serializer, 
@@ -467,6 +490,7 @@ public class CharacterSerializer implements ObjectSerializer {
 ```
 
 2)注册ObjectSerializer
+
 ```java
 SerializeConfig.getGlobalInstance().put(Character.class, new CharacterSerializer());
 ```
@@ -476,6 +500,7 @@ SerializeConfig.getGlobalInstance().put(Character.class, new CharacterSerializer
 只需要2步：[参见此处](https://github.com/alibaba/fastjson/wiki/ObjectDeserializer_cn)
 
 1)自定义实现ObjectDeserializer
+
 ```java
 public static enum OrderActionEnum {
                                     FAIL(1), SUCC(0);
@@ -597,6 +622,7 @@ FastJson 提供了JAX-RS Provider的实现 [FastJsonProvider](https://github.com
 ### 9.14 默认参数配置
 
 1）序列化
+
 ```
   public static int DEFAULT_GENERATE_FEATURE;
     static {
@@ -648,4 +674,5 @@ todo list
 1. fastjson与安全：[fastjson远程代码执行漏洞技术分析与防护方案](http://blog.nsfocus.net/analysis-protection-fastjson-remote-code-execution-vulnerability/)，建议直接升级到1.2.28/1.2.29或者更新版本来保证系统安全
 1. [json ref方式的讨论](http://wenshao.iteye.com/blog/1146897)
 1. fastjson为什么这么有保障，答案是有3837个testcase： mvn test => Tests run: 3837, Failures: 0, Errors: 0, Skipped: 0
+
 
